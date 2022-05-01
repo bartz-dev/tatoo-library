@@ -35,7 +35,7 @@ services:
         volumes:
             - db:/var/lib/mysql
         environment:
-            - "MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true"
+            - "MYSQL_ROOT_PASSWORD=true"
             - "MYSQL_DATABASE=laravel"
             - "MYSQL_USER=laravel"
             - "MYSQL_PASSWORD=laravel"

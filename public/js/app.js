@@ -19549,7 +19549,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'homepage',
   setup: function setup() {
     return {
-      title: 'Laravesl App'
+      title: 'Laravel App'
     };
   }
 });
