@@ -5,7 +5,7 @@
 export default {
     name: 'homepage',
     setup: () => ({
-        title: 'Laravel App'
+        title: 'Laravesl App'
     })
 }
 </script>
