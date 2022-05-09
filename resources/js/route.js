@@ -1,4 +1,5 @@
 import Homepage from "./components/HomePage";
+import AppMenu from "./components/AppMenu";
 
 export const routes = [
     {
@@ -6,6 +7,7 @@ export const routes = [
         name: 'home',
         components: {
             default: Homepage,
+            Menu: AppMenu
         }
     },
 ];

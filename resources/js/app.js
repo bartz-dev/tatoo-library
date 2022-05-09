@@ -1,4 +1,5 @@
 import App from "./App";
+import '../css/app.css'
 
 require('./bootstrap');
 
