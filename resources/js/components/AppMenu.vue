@@ -68,7 +68,7 @@
             </router-link>
         </div>
     </div>
-    <div class="grid grid-cols-1 divide-gray-900 divide-y-[2px] mb-4">
+    <div class="grid grid-cols-1 divide-gray-900 divide-y-[2px]">
         <div><br></div>
         <div class="text-6xl">Collections 1</div>
         <div><br></div>

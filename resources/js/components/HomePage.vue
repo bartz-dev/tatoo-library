@@ -1,5 +1,5 @@
 <template>
-    <AppHomeButton  v-bind:description="collectionDescription" text="Collections" />
+    <AppHomeButton  v-bind:description="collectionDescription" text="Collections" @click="goToCollections" />
     <AppHomeButton  color-reversed="true" v-bind:description="appointmentDescription" text="Appointment" />
 </template>
 <script>
@@ -7,6 +7,11 @@ import AppHomeButton from "./AppHomeButton";
 export default {
     name: 'homepage',
     components: {AppHomeButton},
+    methods: {
+        goToCollections() {
+            this.$router.push('/collections');
+        }
+    },
     setup: () => ({
         title: 'Collections 1',
         collectionDescription: {
