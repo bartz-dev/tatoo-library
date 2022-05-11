@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .main-menu-link p {
     opacity: 0.3;
@@ -68,6 +68,9 @@ export default {
 
 /* filter: invert(100%); */
 .button-border-in {
+    font-family: 'antiqueLegacy';
+    font-size: 10.5rem;
+    line-height: 100px;
     border-radius: 200px;
     height: 40vh;
     padding-right: 20%;

@@ -15,11 +15,11 @@
 /*@font-face {*/
 /*    font-family: "AntiqueLegacy";*/
 /*    src: local("AntiqueLegacy"),*/
-/*    url(../font/antiqueLegacyBook.OTF) format("truetype");*/
+/*    url(../font/antiqueLegacyBook.otf) format("truetype");*/
 /*}*/
 /*@font-face {*/
 /*    font-family: "AntiqueLegacy-italic";*/
 /*    src: local("AntiqueLegacy-italic"),*/
-/*    url(../font/AntiqueLegacyBookItalic.OTF) format("truetype");*/
+/*    url(../font/AntiqueLegacyBookItalic.otf) format("truetype");*/
 /*}*/
 </style>

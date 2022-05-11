@@ -1,5 +1,5 @@
 <template>
-    <AppHomeButton  v-bind:description="artistaDescription" text="Cokney" />
+    <AppHomeButton  v-bind:description="artistaDescription" text="Cokney" @click="$router.push('/collectiondetail')" />
     <AppHomeButton  color-reversed="true" v-bind:description="artistbDescription" text="Appointment" />
 </template>
 
