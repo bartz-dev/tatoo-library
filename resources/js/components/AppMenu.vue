@@ -68,9 +68,9 @@
             </router-link>
         </div>
     </div>
-    <div class="grid grid-cols-1 divide-gray-900 divide-y-[2px]">
+    <div class="h-20 grid grid-cols-1 divide-gray-900 divide-y-[2px]">
         <div><br></div>
-        <div class="text-6xl">Collections 1</div>
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-6xl">Collections 1</div>
         <div><br></div>
     </div>
 </template>

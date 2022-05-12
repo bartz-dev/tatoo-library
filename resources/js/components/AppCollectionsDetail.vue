@@ -3,7 +3,7 @@
         <Button class="w-80" text="Cokney's 3D Scans Collection" />
         <Button class="w-80" text="@cokney" />
     </div>
-    <div style="height: 100%; position:fixed" class="w-full bg-black">
+    <div class="h-screen w-full bg-black">
         <AppCollectionButton :description="descriptionCollection" style="font-family: 'antiqueLegacy', sans-serif;" />
     </div>
 </template>

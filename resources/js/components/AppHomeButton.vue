@@ -49,7 +49,7 @@ export default {
 
 .button-border {
     background-color: white;
-    height: 40vh;
+    height: 25vh;
     border-top: 2px solid rgb(16, 16, 16);
     border-bottom: 2px solid rgb(16, 16, 16);
     font-size: 7.75rem;
@@ -72,7 +72,7 @@ export default {
     font-size: 10.5rem;
     line-height: 100px;
     border-radius: 200px;
-    height: 40vh;
+    height: 25vh;
     padding-right: 20%;
     padding-left: 20%;
     border-right: 40px solid black;

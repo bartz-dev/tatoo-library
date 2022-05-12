@@ -35,6 +35,7 @@ services:
         volumes:
             - db:/var/lib/mysql
         environment:
+            - "MYSQL_ALLOW_EMPTY_PASSWORD=true"
             - "MYSQL_DATABASE=laravel"
             - "MYSQL_USER=laravel"
             - "MYSQL_PASSWORD=laravel"
