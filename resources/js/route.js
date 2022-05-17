@@ -3,6 +3,7 @@ import AppMenu from "./components/AppMenu";
 import AppCollectionsHome from "./components/AppCollectionsHome";
 import AppCollectionsDetail from "./components/AppCollectionsDetail";
 import AppEditorialInfo from "./components/AppEditorialInfo";
+import AppAppointmentHome from "./components/AppAppointmentHome";
 
 export const routes = [
     {
@@ -10,7 +11,6 @@ export const routes = [
         name: 'home',
         components: {
             default: Homepage,
-            Menu: AppMenu
         }
     },
     {
@@ -34,6 +34,14 @@ export const routes = [
         name: 'Editorial',
         components: {
             default: AppEditorialInfo,
+            Menu: AppMenu
+        }
+    },
+    {
+        path: '/appointment',
+        name: 'Appointment',
+        components: {
+            default: AppAppointmentHome,
             Menu: AppMenu
         }
     }

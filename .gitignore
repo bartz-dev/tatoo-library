@@ -19,3 +19,4 @@ yarn-error.log
 storage/logs/*
 docker/nginx/sites/default.conf
 public/mix-manifest.json
+*Zone.Identifier

@@ -1,7 +1,7 @@
 <template>
-    <div class="button-img">
-        <img src="../images/button-nav-bar.svg" />
-        <div class="w-4/6 centered">{{ text }}</div>
+    <div style="width: 99%" class="cursor-pointer button-img">
+        <img :src="src" />
+        <div :class="{'text-white': reversed, 'text-black': !reversed}" class="w-4/6 centered">{{ text }}</div>
     </div>
 </template>
 
@@ -9,7 +9,12 @@
 export default {
     name: "Button",
     props: {
-        text: ''
+        text: '',
+        src: {
+            required: false,
+            default: 'images/button-nav-bar.svg'
+        },
+        reversed: false
     }
 }
 </script>
@@ -18,7 +23,6 @@ export default {
 .button-img {
     position: relative;
     text-align: center;
-    color: black;
 }
 .centered {
     position: absolute;

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <AppHomeButton class="h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="Editorial" />
+        <AppHomeButton class="text-9xl h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="Editorial" />
         <div class="divide-gray-900 divide-y-[2px]">
             <div style="font-family: 'antiqueLegacy', sans-serif;" class="divide-gray-900 divide-y-[2px] text-center text-9xl">
                 Preserving Tattooed Skin After Death

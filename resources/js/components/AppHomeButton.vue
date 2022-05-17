@@ -1,7 +1,7 @@
 <template>
     <div v-bind:class="{'revert-style': colorReversed}">
         <div v-bind:class="{'text-cols': colorReversed}" class="grid grid-cols-1 divide-gray-900 divide-y-[2px]">
-            <div><br></div>
+            <div class="h-6"><br></div>
         </div>
         <div  class="button-border main-menu-link flex items-center justify-center h-40 w-full">
             <div class="text-center w-full">
@@ -10,8 +10,8 @@
         </div>
 
         <div v-bind:class="{'text-cols': colorReversed}" class="grid grid-cols-1 divide-gray-900 divide-y-[2px]">
-            <div><br></div>
-            <div class="text-black flex items-center">
+            <div class="h-6"><br></div>
+            <div class="text-xl text-black flex items-center">
                 <div class="mx-auto">{{ description.title }}</div>
                 <div class="mx-auto">{{ description.des }}</div>
                 <div class="mx-auto">{{ description.service }}</div>
@@ -69,7 +69,7 @@ export default {
 /* filter: invert(100%); */
 .button-border-in {
     font-family: 'antiqueLegacy';
-    font-size: 10.5rem;
+    /*font-size: 10.5rem;*/
     line-height: 100px;
     border-radius: 200px;
     height: 25vh;

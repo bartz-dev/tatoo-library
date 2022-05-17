@@ -1,12 +1,18 @@
 <template>
-    <AppHomeButton  v-bind:description="collectionDescription" text="Collections" @click="goToCollections" />
-    <AppHomeButton  color-reversed="true" v-bind:description="appointmentDescription" text="Appointment" />
+    <video src="assets/home_background.mp4" autoplay muted loop></video>
+<!--    <video-bg :class="rotate-90" :sources="['assets/home_background.mp4']" img="assets/home_background.mp4">-->
+        <app-second-menu />
+<!--    </video-bg>-->
+<!--    <AppHomeButton  v-bind:description="collectionDescription" text="Collections" @click="goToCollections" />-->
+<!--    <AppHomeButton  color-reversed="true" v-bind:description="appointmentDescription" text="Appointment" />-->
 </template>
 <script>
 import AppHomeButton from "./AppHomeButton";
+import AppMenu from "./AppMenu";
+import AppSecondMenu from "./AppSecondMenu";
 export default {
     name: 'homepage',
-    components: {AppHomeButton},
+    components: {AppSecondMenu, AppMenu, AppHomeButton},
     methods: {
         goToCollections() {
             this.$router.push('/collections');
@@ -29,3 +35,11 @@ export default {
     })
 }
 </script>
+<style scoped>
+video {
+    height: 100vh;
+    width: 100%;
+    object-fit: fill;
+    position: absolute;
+}
+</style>

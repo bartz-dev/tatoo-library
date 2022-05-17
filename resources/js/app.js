@@ -1,5 +1,6 @@
 import App from "./App";
 import '../css/app.css'
+import VideoBg from 'vue-videobg'
 
 require('./bootstrap');
 
@@ -19,6 +20,7 @@ const app = createApp(App);
 app.use(router);
 app.use(store);
 
+app.component('video-bg', VideoBg)
 
 app.component('app', App);
 
