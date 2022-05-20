@@ -1,46 +1,55 @@
-version: '2'
+version: '3.4'
+
 services:
-
-    # The Application
-    app:
+    php-fpm:
         build:
+            context: .
+            dockerfile: ./docker/Dockerfile
             args:
-                user: sammy
-                uid: 1000
-            context: ./
-            dockerfile: app.dockerfile
-        working_dir: /var/www
-        volumes:
-            - ./:/var/www
+                UID: ${UID:-1000}
+                GID: ${GID:-1000}
+            target: php-dev
+        env_file:
+            - .env
         environment:
-            - "DB_PORT=3306"
-            - "host=localhost"
+            PHP_IDE_CONFIG: "serverName=docker"
+        restart: unless-stopped
+        depends_on:
+            - database
+        volumes:
+            - .:/var/www
+        command: dev
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
 
-    # The Web Server
-    web:
+    nginx:
         build:
-            context: ./
-            dockerfile: web.dockerfile
-        working_dir: /var/www
-        volumes_from:
-            - app
-        links:
-            - app
+            context: .
+            dockerfile: ./docker/Dockerfile
+            args:
+                UID: ${UID:-1000}
+                GID: ${GID:-1000}
+            target: nginx-prod
+        restart: unless-stopped
+        env_file:
+            - .env
         ports:
-            - 8091:80
-
-    # The Database
-    database:
-        image: mysql:5.7
+            - ${NGINX_FRONTEND_PORT:-80}:80
+        depends_on:
+            - php-fpm
         volumes:
-            - db:/var/lib/mysql
-        environment:
-            - "MYSQL_ALLOW_EMPTY_PASSWORD=true"
-            - "MYSQL_DATABASE=laravel"
-            - "MYSQL_USER=laravel"
-            - "MYSQL_PASSWORD=laravel"
-        ports:
-            - "33062:3306"
+            - ./docker/nginx/sites:/etc/nginx/sites-available
+            - .:/var/www
 
-volumes:
-    db:
+    database:
+        image: mariadb
+        restart: unless-stopped
+        ports:
+            - ${DATABASE_FRONTEND_PORT:-3306}:3306
+        volumes:
+            - ./storage/app/mariadb/data:/var/lib/mysql
+        environment:
+            - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+            - MARIADB_USER=mariadb
+            - MARIADB_PASSWORD=test
+            - MARIADB_DATABASE=database

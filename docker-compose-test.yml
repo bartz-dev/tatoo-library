@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+      target: php-test
+    env_file:
+      - .env.test
+    depends_on:
+      - database
+    command: test
+
+  database:
+    image: mariadb:10.7.3
+    env_file:
+      - .env.test
+    environment:
+      - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=true
+      - MARIADB_USER=mariadb
+      - MARIADB_PASSWORD=${DB_PASSWORD}
+      - MARIADB_DATABASE=database

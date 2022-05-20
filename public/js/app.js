@@ -20183,7 +20183,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_ButtonArtist = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ButtonArtist");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  class=\"text-9xl\" v-bind:description=\"artistaDescription\" text=\"Cokney\" @click=\"$router.push('/collectiondetail')\" />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  class=\"text-9xl\" color-reversed=\"true\" v-bind:description=\"artistbDescription\" text=\"Appointment\" />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     reversed: $props.activeList === 0,
     src: $props.activeList === 1 ? 'images/button_artist.svg' : 'images/button_artist_black.svg',
     text: "Filters",
@@ -20204,9 +20204,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , ["reversed", "src"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ButtonArtist, {
     src: "images/button_artist.svg",
     text: "Cokney"
-  })])])], 2112
-  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-  );
+  })])]);
 }
 
 /***/ }),

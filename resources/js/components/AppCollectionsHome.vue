@@ -1,6 +1,4 @@
 <template>
-<!--    <AppHomeButton  class="text-9xl" v-bind:description="artistaDescription" text="Cokney" @click="$router.push('/collectiondetail')" />-->
-<!--    <AppHomeButton  class="text-9xl" color-reversed="true" v-bind:description="artistbDescription" text="Appointment" />-->
     <div class="flex mt-4 border-t-2 border-black w-full h-full">
         <div class="flex-col border-r-2 border-black w-1/6">
             <div class="mt-4">

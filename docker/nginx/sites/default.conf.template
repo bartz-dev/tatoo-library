@@ -1,0 +1,32 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server ipv6only=on;
+
+    root /var/www/public;
+    index index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri /index.php =404;
+
+        # Add custom resolver to ensure backend ip resolution being updated if backend ip changes after nginx startup.
+        # Must pass the fastgci address as a variable to force nginx resolving IP when DNS TTL is hit.
+        resolver ${RESOLVER_ADDRESS} valid=15s ipv6=off;
+        set $backend ${BACKEND_ADDRESS};
+        fastcgi_pass $backend;
+
+        fastcgi_index index.php;
+        fastcgi_buffers 16 16k;
+        fastcgi_buffer_size 32k;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_read_timeout 3600;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
