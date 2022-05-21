@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Artist;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('/artists')->group(function () {
+    Route::get('/', function () {
+        return Artist::all();
+    })->name('show');
+
+    Route::prefix('/')->group(function () {
+        Route::get('{artist}', function (Artist $artist) {
+            return $artist;
+        })->name('index');
+    });
+});
+
+Route::get('/tags', function() {
+    return Tag::all();
 });
