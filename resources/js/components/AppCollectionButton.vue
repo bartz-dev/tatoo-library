@@ -1,16 +1,19 @@
 <template>
 <!--  Button collection  -->
-    <div style="font-family: 'antiqueLegacy', sans-serif;" class="bg-black pt-6 h-4/6 lg:h-96 w-1/4 text-xs">
+    <div style="font-family: 'antiqueLegacy', sans-serif;" class="ml-4 mr-4 bg-black pt-6 h-5/6 lg:h-96 text-xs">
         <div class="pl-4 grid grid-cols-2 rounded-t-2xl h-8 bg-white">
             <div>{{ description.collectionName }}</div>
             <div>{{ description.location }}</div>
             <div>{{ description.physiqueLocation }}</div>
             <div>{{ description.session }}</div>
         </div>
-        <div style="height:95%" class="relative">
-ss
+        <div style="height:90%" class="relative">
+        <div class="h-full">
+                <video style="object-fit: fill; height: 100%;" :src="description.payload + '.mp4'" autoplay muted loop></video>
+
         </div>
-        <div class="rounded-b-2xl mt-4 h-8 w-full bg-white flex justify-center items-center">Click on the + to explore the 3D Scan</div>
+        </div>
+        <div class="rounded-b-2xl h-8 w-full bg-white flex justify-center items-center">Click on the + to explore the 3D Scan</div>
     </div>
 </template>
 

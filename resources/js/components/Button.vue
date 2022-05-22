@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 99%" class="cursor-pointer button-img">
+    <div class="cursor-pointer button-img">
         <img :src="src" />
         <div :class="{'text-white': reversed, 'text-black': !reversed}" class="w-4/6 centered">{{ text }}</div>
     </div>

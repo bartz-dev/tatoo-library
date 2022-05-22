@@ -8,6 +8,7 @@ import {createApp} from "vue";
 import {createRouter, createWebHashHistory} from 'vue-router'
 import {routes} from "./route";
 import {store} from "./store";
+import axios from "axios";
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -16,6 +17,8 @@ const router = createRouter({
 
 
 const app = createApp(App);
+
+app.config.globalProperties.$http = axios;
 
 app.use(router);
 app.use(store);

@@ -1,10 +1,12 @@
 <template>
-    <div class="flex">
-        <Button class="w-80" text="Cokney's 3D Scans Collection" />
-        <Button class="w-80" text="@cokney" />
+    <div class="mt-4 mb-4 flex">
+        <Button src="images/button_artist.svg" class="w-80 mr-6" text="Cokney's 3D Scans Collection" />
+        <Button src="images/button_artist.svg" class="w-80" text="@cokney" />
     </div>
-    <div class="h-screen w-full bg-black">
-        <AppCollectionButton :description="descriptionCollection" style="font-family: 'antiqueLegacy', sans-serif;" />
+    <div class="flex h-screen w-full bg-black">
+        <div v-for="collection in descriptionCollection.collections" :key="collection.collection_id" class="w-96 h-full">
+            <AppCollectionButton :description="description(collection)" style="font-family: 'antiqueLegacy', sans-serif;" />
+        </div>
     </div>
 </template>
 
@@ -14,26 +16,28 @@ import AppCollectionButton from "./AppCollectionButton";
 export default {
     name: "AppCollectionsDetail",
     components: {AppCollectionButton, Button},
-    data: function () {
-        return {descriptionCollection : {}}
+    data() {
+        return {
+            descriptionCollection : {}
+        }
     },
     methods: {
-        description() {
+        description(collection) {
+            console.log(collection)
             return {
-                collectionName: 'Tribal Sleeve made in 2022',
-                location: 'Annecy + Barcelone',
+                collectionName: collection.nom_court,
+                location: collection.location,
                 physiqueLocation: 'On Malow',
-                session: 'WIP - 1 Session'
+                session: collection.description,
+                payload: 'assets/data/' + collection.payload
             }
         }
     },
     mounted() {
-        this.descriptionCollection = {
-            collectionName: 'Tribal Sleeve made in 2022',
-            location: 'Annecy + Barcelone',
-            physiqueLocation: 'On Malow',
-            session: 'WIP - 1 Session'
-        }
+        this.$http.get('/' + this.$route.params.id + '/collections')
+            .then(res => this.descriptionCollection = res.data)
+            
+
     }
 }
 </script>

@@ -12,6 +12,6 @@ class Artist extends Model
     protected $primaryKey = 'artist_id'; 
 
     public function collections() {
-        return $this->hasMany(Collection::class);
+        return $this->hasMany(Collection::class, 'artist_id', 'artist_id');
     }
 }

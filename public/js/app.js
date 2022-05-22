@@ -19701,22 +19701,23 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    description: function description() {
+    description: function description(collection) {
+      console.log(collection);
       return {
-        collectionName: 'Tribal Sleeve made in 2022',
-        location: 'Annecy + Barcelone',
+        collectionName: collection.nom_court,
+        location: collection.location,
         physiqueLocation: 'On Malow',
-        session: 'WIP - 1 Session'
+        session: collection.description,
+        payload: 'assets/data/' + collection.payload
       };
     }
   },
   mounted: function mounted() {
-    this.descriptionCollection = {
-      collectionName: 'Tribal Sleeve made in 2022',
-      location: 'Annecy + Barcelone',
-      physiqueLocation: 'On Malow',
-      session: 'WIP - 1 Session'
-    };
+    var _this = this;
+
+    this.$http.get('/' + this.$route.params.id + '/collections').then(function (res) {
+      return _this.descriptionCollection = res.data;
+    });
   }
 });
 
@@ -19746,6 +19747,12 @@ __webpack_require__.r(__webpack_exports__);
     Button: _Button__WEBPACK_IMPORTED_MODULE_1__["default"],
     AppHomeButton: _AppHomeButton__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  data: function data() {
+    return {
+      artists: [],
+      tags: []
+    };
+  },
   setup: function setup() {
     return {
       artistaDescription: {
@@ -19766,6 +19773,21 @@ __webpack_require__.r(__webpack_exports__);
     activeList: {
       "default": 0
     }
+  },
+  methods: {
+    pair: function pair(num) {
+      return num % 2 == 0;
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get('/artists').then(function (res) {
+      return _this.artists = res.data;
+    });
+    this.$http.get('/tags').then(function (res) {
+      return _this.tags = res.data;
+    });
   }
 });
 
@@ -19977,23 +19999,6 @@ __webpack_require__.r(__webpack_exports__);
     goToCollections: function goToCollections() {
       this.$router.push('/collections');
     }
-  },
-  setup: function setup() {
-    return {
-      title: 'Collections 1',
-      collectionDescription: {
-        title: 'Platform for inkers and inked',
-        des: 'Digitalizing artworks and body parts',
-        service: 'Online experience',
-        counted: 0
-      },
-      appointmentDescription: {
-        title: 'Take an appointment',
-        des: 'For tattoo artist and tattooed',
-        service: 'Online form',
-        counted: ''
-      }
-    };
   }
 });
 
@@ -20069,23 +20074,24 @@ var _hoisted_1 = {
   style: {
     "font-family": "'antiqueLegacy', sans-serif"
   },
-  "class": "bg-black pt-6 h-4/6 lg:h-96 w-1/4 text-xs"
+  "class": "ml-4 mr-4 bg-black pt-6 h-5/6 lg:h-96 text-xs"
 };
 var _hoisted_2 = {
   "class": "pl-4 grid grid-cols-2 rounded-t-2xl h-8 bg-white"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_3 = {
   style: {
-    "height": "95%"
+    "height": "90%"
   },
   "class": "relative"
-}, " ss ", -1
-/* HOISTED */
-);
+};
+var _hoisted_4 = {
+  "class": "h-full"
+};
+var _hoisted_5 = ["src"];
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "rounded-b-2xl mt-4 h-8 w-full bg-white flex justify-center items-center"
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "rounded-b-2xl h-8 w-full bg-white flex justify-center items-center"
 }, "Click on the + to explore the 3D Scan", -1
 /* HOISTED */
 );
@@ -20099,7 +20105,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.description.session), 1
   /* TEXT */
-  )]), _hoisted_3, _hoisted_4])], 2112
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", {
+    style: {
+      "object-fit": "fill",
+      "height": "100%"
+    },
+    src: $props.description.payload + '.mp4',
+    autoplay: "",
+    muted: "",
+    loop: ""
+  }, null, 8
+  /* PROPS */
+  , _hoisted_5)])]), _hoisted_6])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -20120,10 +20137,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex"
+  "class": "mt-4 mb-4 flex"
 };
 var _hoisted_2 = {
-  "class": "h-screen w-full bg-black"
+  "class": "flex h-screen w-full bg-black"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
@@ -20131,19 +20148,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_AppCollectionButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("AppCollectionButton");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "w-80",
+    src: "images/button_artist.svg",
+    "class": "w-80 mr-6",
     text: "Cokney's 3D Scans Collection"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    src: "images/button_artist.svg",
     "class": "w-80",
     text: "@cokney"
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_AppCollectionButton, {
-    description: _ctx.descriptionCollection,
-    style: {
-      "font-family": "'antiqueLegacy', sans-serif"
-    }
-  }, null, 8
-  /* PROPS */
-  , ["description"])])], 64
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.descriptionCollection.collections, function (collection) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      key: collection.collection_id,
+      "class": "w-96 h-full"
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_AppCollectionButton, {
+      description: $options.description(collection),
+      style: {
+        "font-family": "'antiqueLegacy', sans-serif"
+      }
+    }, null, 8
+    /* PROPS */
+    , ["description"])]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -20176,14 +20202,19 @@ var _hoisted_4 = {
   "class": "mt-4"
 };
 var _hoisted_5 = {
-  "class": "mt-4"
+  "class": "grid grid-cols-1"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   var _component_ButtonArtist = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ButtonArtist");
 
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    style: {
+      "width": "99%"
+    },
     reversed: $props.activeList === 0,
     src: $props.activeList === 1 ? 'images/button_artist.svg' : 'images/button_artist_black.svg',
     text: "Filters",
@@ -20193,6 +20224,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["reversed", "src"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    style: {
+      "width": "99%"
+    },
     reversed: $props.activeList === 1,
     src: $props.activeList === 1 ? 'images/button_artist_black.svg' : 'images/button_artist.svg',
     text: "Style",
@@ -20201,10 +20235,38 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 8
   /* PROPS */
-  , ["reversed", "src"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ButtonArtist, {
-    src: "images/button_artist.svg",
-    text: "Cokney"
-  })])]);
+  , ["reversed", "src"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.artists, function (artist, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "mt-4",
+      key: artist.artist_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+      to: '/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id
+    }, {
+      "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+        return [$options.pair(index) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ButtonArtist, {
+          key: 0,
+          reversed: $options.pair(index),
+          src: "images/button_artist_black.svg",
+          text: artist.nom
+        }, null, 8
+        /* PROPS */
+        , ["reversed", "text"])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_ButtonArtist, {
+          key: 1,
+          src: "images/button_artist.svg",
+          text: artist.nom
+        }, null, 8
+        /* PROPS */
+        , ["text"]))];
+      }),
+      _: 2
+      /* DYNAMIC */
+
+    }, 1032
+    /* PROPS, DYNAMIC_SLOTS */
+    , ["to"])]);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])]);
 }
 
 /***/ }),
@@ -20742,9 +20804,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  style: {
-    "width": "99%"
-  },
   "class": "cursor-pointer button-img"
 };
 var _hoisted_2 = ["src"];
@@ -20796,6 +20855,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    style: {
+      "font-family": "'antiqueLegacy', sans-serif"
+    },
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'text-white': $props.reversed,
       'text-black': !$props.reversed
@@ -20825,7 +20887,13 @@ var _withScopeId = function _withScopeId(n) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-fa44bb0e"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
 };
 
-var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
+var _hoisted_1 = {
+  style: {
+    "position": "relative"
+  }
+};
+
+var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("video", {
     src: "assets/home_background.mp4",
     autoplay: "",
@@ -20836,11 +20904,32 @@ var _hoisted_1 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
+var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    "class": "title-img",
+    src: "images/title-screen.svg",
+    alt: "title"
+  }, null, -1
+  /* HOISTED */
+  );
+});
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_app_second_menu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-second-menu");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <video-bg :class=\"rotate-90\" :sources=\"['assets/home_background.mp4']\" img=\"assets/home_background.mp4\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_app_second_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </video-bg>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  v-bind:description=\"collectionDescription\" text=\"Collections\" @click=\"goToCollections\" />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  color-reversed=\"true\" v-bind:description=\"appointmentDescription\" text=\"Appointment\" />")], 64
-  /* STABLE_FRAGMENT */
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_app_second_menu), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/collections"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_3];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <video-bg :class=\"rotate-90\" :sources=\"['assets/home_background.mp4']\" img=\"assets/home_background.mp4\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </video-bg>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  v-bind:description=\"collectionDescription\" text=\"Collections\" @click=\"goToCollections\" />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <AppHomeButton  color-reversed=\"true\" v-bind:description=\"appointmentDescription\" text=\"Appointment\" />")], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
 
@@ -20858,9 +20947,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/app.css */ "./resources/css/app.css");
 /* harmony import */ var vue_videobg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-videobg */ "./node_modules/vue-videobg/src/VideoBackground.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _route__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./route */ "./resources/js/route.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -20871,11 +20962,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_6__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_6__.createWebHashHistory)(),
+
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_7__.createWebHashHistory)(),
   routes: _route__WEBPACK_IMPORTED_MODULE_4__.routes
 });
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_3__.createApp)(_App__WEBPACK_IMPORTED_MODULE_0__["default"]);
+app.config.globalProperties.$http = (axios__WEBPACK_IMPORTED_MODULE_6___default());
 app.use(router);
 app.use(_store__WEBPACK_IMPORTED_MODULE_5__.store);
 app.component('video-bg', vue_videobg__WEBPACK_IMPORTED_MODULE_2__["default"]);
@@ -20932,6 +21025,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AppCollectionsDetail__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/AppCollectionsDetail */ "./resources/js/components/AppCollectionsDetail.vue");
 /* harmony import */ var _components_AppEditorialInfo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AppEditorialInfo */ "./resources/js/components/AppEditorialInfo.vue");
 /* harmony import */ var _components_AppAppointmentHome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AppAppointmentHome */ "./resources/js/components/AppAppointmentHome.vue");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './components/ImagePreview'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 
 
 
@@ -20949,6 +21044,13 @@ var routes = [{
   name: 'Collections',
   components: {
     "default": _components_AppCollectionsHome__WEBPACK_IMPORTED_MODULE_2__["default"],
+    Menu: _components_AppMenu__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }
+}, {
+  path: '/artists/:artist=:id',
+  name: 'ArtistDetail',
+  components: {
+    "default": _components_AppCollectionsDetail__WEBPACK_IMPORTED_MODULE_3__["default"],
     Menu: _components_AppMenu__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 }, {
@@ -21194,7 +21296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nvideo[data-v-fa44bb0e] {\n    height: 100vh;\n    width: 100%;\n    -o-object-fit: fill;\n       object-fit: fill;\n    position: absolute;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nvideo[data-v-fa44bb0e] {\n    height: 100vh;\n    width: 100%;\n    -o-object-fit: fill;\n       object-fit: fill;\n    position: absolute;\n}\n.title-img[data-v-fa44bb0e] {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 75%;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

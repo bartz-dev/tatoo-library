@@ -4,6 +4,7 @@ import AppCollectionsHome from "./components/AppCollectionsHome";
 import AppCollectionsDetail from "./components/AppCollectionsDetail";
 import AppEditorialInfo from "./components/AppEditorialInfo";
 import AppAppointmentHome from "./components/AppAppointmentHome";
+import ImagePreview from "./components/ImagePreview"
 
 export const routes = [
     {
@@ -18,6 +19,14 @@ export const routes = [
         name: 'Collections',
         components: {
             default: AppCollectionsHome,
+            Menu: AppMenu
+        }
+    },
+    {
+        path: '/artists/:artist=:id',
+        name: 'ArtistDetail',
+        components: {
+            default: AppCollectionsDetail,
             Menu: AppMenu
         }
     },

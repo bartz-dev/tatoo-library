@@ -13,6 +13,7 @@ class CreateCollections extends Migration
             $table->string('nom_court');
             $table->string('location');
             $table->string('description');
+            $table->string('payload');
             $table->foreignId('artist_id')->references('artist_id')->on('artists');
             $table->timestamps();
         });
