@@ -1,48 +1,46 @@
 <template>
-    <div style="border-top: 2px solid #101010; border-bottom: 2px solid #101010;" class="w-full items-center flex h-8 view left-sidebar">
-        <div class="flex items-center w-2/4">
-            <router-link to="/" class="w-max mx-auto" :class="{active: 'home' === activeRoute}" @click="setActiveRoute('home')">
-                <div class="w-full mx-auto">
+    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full inline-flex h-7">
+        <div class="flex items-center w-4/6" style="overflow: hidden;">
+            <router-link to="/" :class="{active: 'home' === activeRoute}" @click="setActiveRoute('home')">
+                <div>
                     <div class="button-img">
-                        <img v-if="activeRoute.toLowerCase() === 'home'" width="250" src="images/button_nav_bar_black.svg">
-                        <img v-else width="250" src="images/button-nav-bar.svg" />
-                        <div :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="centered">Home</div>
+                        <img v-if="activeRoute.toLowerCase() === 'home'" width="200" src="/images/button_nav_bar_black.svg">
+                        <img v-else width="200" src="/images/button-nav-bar.svg" />
+                        <div :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="w-full centered">Skinner Project</div>
                     </div>
                 </div>
             </router-link>
 
-            <router-link to="/collections" class="w-max mx-auto" :class="{active: 'collections' === activeRoute}" @click="setActiveRoute('collections')">
-                <div class="w-auto mx-auto">
+            <router-link to="/artistsdetail" :class="{active: 'artists' === activeRoute}" @click="setActiveRoute('artists')">
+                <div>
                     <div class="button-img">
-                        <img v-if="activeRoute.toLowerCase() === 'collections'" width="250" src="images/button_nav_bar_black.svg">
-                        <img v-else width="250" src="images/button-nav-bar.svg" />
-                        <div :class="{'text-white': activeRoute.toLowerCase() === 'collections'}" class="centered">Artists</div>
+                        <img v-if="activeRoute.toLowerCase() === 'artists'" width="200" src="/images/button_nav_bar_black.svg">
+                        <img v-else width="200" src="/images/button-nav-bar.svg" />
+                        <div :class="{'text-white': activeRoute.toLowerCase() === 'artists'}" class="w-full centered">Artists</div>
                     </div>
                 </div>
             </router-link>
 
-                    <div class="w-auto mx-auto">
-                        <router-link to="/editorial" class="w-max mx-auto" :class="{active: 'editorial' === activeRoute}" @click="setActiveRoute('editorial')">
+                    <div>
+                        <router-link to="/editorial" :class="{active: 'editorial' === activeRoute}" @click="setActiveRoute('editorial')">
                             <div class="button-img">
-                                <img v-if="activeRoute.toLowerCase() === 'editorial'" width="250" src="images/button_nav_bar_black.svg">
-                                <img v-else width="250" src="images/button-nav-bar.svg" />
-                                <div :class="{'text-white': activeRoute.toLowerCase() === 'editorial'}" class="centered">Editorial</div>
+                                <img v-if="activeRoute.toLowerCase() === 'editorial'" width="200" src="/images/button_nav_bar_black.svg">
+                                <img v-else width="200" src="/images/button-nav-bar.svg" />
+                                <div :class="{'text-white': activeRoute.toLowerCase() === 'editorial'}" class="w-full centered">Editorial</div>
                             </div>
                         </router-link>
                     </div>
         </div>
 
-        <div class="flex-initial w-2/3">
 
-        </div>
 
-        <div class="flex items-center w-1/3">
-            <div class="w-1/3"></div>
-            <div class="w-auto mx-auto">
-                <router-link to="/about" class="w-max mx-auto" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
+        <div class="flex items-center w-1/3" style="overflow: hidden">
+            <div class="w-auto ml-auto">
+                <router-link to="/about" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
                     <div class="button-img">
-                        <img width="200" src="images/button-nav-bar.svg" />
-                        <div class="centered">About</div>
+                        <img v-if="activeRoute.toLowerCase() === 'about'" width="200" src="/images/button_nav_bar_black.svg">
+                        <img v-else width="200" src="/images/button-nav-bar.svg" />
+                        <div :class="{'text-white': activeRoute.toLowerCase() === 'about'}" class="w-full centered">About</div>
                     </div>
                 </router-link>
             </div>

@@ -1,17 +1,19 @@
 import App from "./App";
 import '../css/app.css'
-import VideoBg from 'vue-videobg'
 
 require('./bootstrap');
 
 import {createApp} from "vue";
-import {createRouter, createWebHashHistory} from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import {routes} from "./route";
 import {store} from "./store";
 import axios from "axios";
+import AppMenu from './components/AppMenu'
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    mode: 'history',
+    history: createWebHistory(),
+    fallback: true,
     routes: routes,
 });
 
@@ -23,7 +25,6 @@ app.config.globalProperties.$http = axios;
 app.use(router);
 app.use(store);
 
-app.component('video-bg', VideoBg)
 
 app.component('app', App);
 

@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Artist;
+use App\Models\Collection;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +19,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('/artists')->group(function () {
+    Route::get('/', function () {
+        return Artist::all();
+    })->name('show');
+
+    Route::prefix('/')->group(function () {
+        Route::get('{artist}', function (Artist $artist) {
+            return $artist;
+        })->name('index');
+    });
+});
+
+Route::get('/{artist}/collections', function (Artist $artist) {
+    return $artist->load('collections');
+});
+
+Route::get('/collections', function () {
+    return Collection::all();
+});
+
+Route::get('/tags', function() {
+    return Tag::all();
 });

@@ -7,9 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Collection extends Model
 {
-    use HasFactory;
 
-    protected $id = "collection_id";
+    protected $primaryKey = "collection_id";
 
     public function artist() 
     {

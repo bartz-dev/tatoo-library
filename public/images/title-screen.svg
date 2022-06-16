@@ -8,7 +8,7 @@
       <rect width="1560" height="260" rx="130" stroke="none"/>
       <rect x="2" y="2" width="1556" height="256" rx="128" fill="none"/>
     </g>
-    <text id="Skinner_Project" data-name="Skinner Project" transform="translate(123 210)" fill="#fff" stroke="#000" stroke-width="1" font-size="200" font-family="AntiqueLegacy-Semibold, Antique Legacy" font-weight="600" letter-spacing="-0.02em"><tspan x="0" y="0">Skinner </tspan><tspan y="0" font-family="AntiqueLegacy-SemiboldItalic, Antique Legacy" font-style="italic">Project</tspan></text>
+    <text id="Skinner_Project" data-name="Skinner Project" transform="translate(123 210)" fill="#fff" stroke="#000" stroke-width="1" font-size="200" font-family="antiqueLegacy, Antique Legacy" font-weight="600" letter-spacing="-0.02em"><tspan x="0" y="0">Skinner </tspan><tspan y="0" font-family="antiqueLegacyItalic, Antique Legacy" font-style="italic">Project</tspan></text>
     <text id="Archiving_and_Curating_Tattoos" data-name="Archiving and Curating Tattoos" transform="translate(138 241)" fill="#fff" stroke="#000" stroke-width="1" font-size="20" font-family="AntiqueLegacy-Book, Antique Legacy"><tspan x="0" y="0">Archiving and Curating Tattoos</tspan></text>
     <text id="An_Online_Experience" data-name="An Online Experience" transform="translate(620 241)" fill="#fff" stroke="#000" stroke-width="1" font-size="20" font-family="AntiqueLegacy-Book, Antique Legacy"><tspan x="0" y="0">An Online Experience</tspan></text>
     <text id="In_Open_Access" data-name="In Open Access" transform="translate(1396 241)" fill="#fff" stroke="#000" stroke-width="1" font-size="20" font-family="AntiqueLegacy-Book, Antique Legacy"><tspan x="0" y="0">In Open Access</tspan></text>

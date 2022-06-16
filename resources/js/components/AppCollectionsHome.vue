@@ -1,6 +1,7 @@
 <template>
-    <div class="flex mt-4 border-t-2 border-black w-full h-full">
-        <div class="flex-col border-r-2 border-black w-1/6">
+<div class="fixed h-full">
+    <div class="flex border-t border-black w-full h-full">
+        <div class="flex-col border-r-2 border-black w-96">
             <div class="mt-4">
                 <Button style="width: 99%" :reversed="activeList === 0"  :src="activeList === 1 ? 'images/button_artist.svg' : 'images/button_artist_black.svg'" text="Filters" @click="activeList = 0" />
             </div>
@@ -8,16 +9,17 @@
                 <Button style="width: 99%" :reversed="activeList === 1"  :src="activeList === 1 ? 'images/button_artist_black.svg' : 'images/button_artist.svg'" text="Style" @click="activeList = 1" />
             </div>
         </div>
-        <div class="grid grid-cols-1">
+        <div class="flex-col">
             <div class="mt-4" v-for="(artist, index) in artists" :key="artist.artist_id">
                 <router-link :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
-                    <ButtonArtist v-if="pair(index)" :reversed="pair(index)" src="images/button_artist_black.svg"  :text="artist.nom" />
+                    <ButtonArtist v-if="!pair(index)" :reversed="pair(index)" src="images/button_artist_black.svg"  :text="artist.nom" />
                     <ButtonArtist v-else src="images/button_artist.svg"  :text="artist.nom" />
                 </router-link>
             </div>
         </div>
 
     </div>
+</div>
 </template>
 
 <script>
@@ -58,9 +60,9 @@ export default {
         }
     },
     mounted() {
-        this.$http.get('/artists')
+        this.$http.get('/api/artists')
             .then(res => this.artists = res.data);
-        this.$http.get('/tags')
+        this.$http.get('/api/tags')
             .then(res => this.tags = res.data);
     }
 }

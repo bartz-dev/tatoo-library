@@ -25,16 +25,17 @@
             }
             @font-face {
                 font-family: 'antiqueLegacy';
-                src: url('../font/antiqueLegacyBook.otf');
+                src: url('/../font/antiqueLegacyBook.otf');
             }
             @font-face {
                 font-family: 'antiqueLegacyItalic';
-                src: url('../font/AntiqueLegacyBookItalic.otf');
+                src: url('/../font/AntiqueLegacyBookItalic.otf');
             }
         </style>
     </head>
     <body class="antialiased">
         <div id="app" style="max-width: 100%">
+            @yield('pagescript')
             <App></App>
         </div>
         <script src="https://cdn.tailwindcss.com"></script>

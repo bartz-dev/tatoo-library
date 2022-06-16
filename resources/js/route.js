@@ -4,9 +4,24 @@ import AppCollectionsHome from "./components/AppCollectionsHome";
 import AppCollectionsDetail from "./components/AppCollectionsDetail";
 import AppEditorialInfo from "./components/AppEditorialInfo";
 import AppAppointmentHome from "./components/AppAppointmentHome";
-import ImagePreview from "./components/ImagePreview"
+import AppAbout from './components/AppAbout'
 
 export const routes = [
+    {
+        path: '/about',
+        name: 'about',
+        components: {
+            default: AppAbout,
+            Menu: AppMenu
+        }
+    },
+    {
+        path: '/viewer/:artist_id/p=:payload',
+        name: 'three',
+        components: {
+            Menu: AppMenu
+        }
+    },
     {
         path: '/',
         name: 'home',
@@ -15,8 +30,8 @@ export const routes = [
         }
     },
     {
-        path: '/collections',
-        name: 'Collections',
+        path: '/artistsdetail',
+        name: 'artists',
         components: {
             default: AppCollectionsHome,
             Menu: AppMenu
@@ -30,6 +45,14 @@ export const routes = [
             Menu: AppMenu
         }
     },
+    // {
+    //     path: '/artists/:artist=:id/:collection_id',
+    //     name: 'CollectionViewer',
+    //     components: {
+    //         default: CollectionViewer,
+    //         Menu: AppMenu
+    //     }
+    // },
     {
         path: '/collectiondetail',
         name: 'CollectionDetail',

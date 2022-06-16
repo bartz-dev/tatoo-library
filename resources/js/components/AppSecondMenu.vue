@@ -1,7 +1,14 @@
 <template>
-    <div class="w-full items-center flex h-8 view left-sidebar">
+    <div class="w-full items-center flex h-8 view left-sidebar pt-8">
         <div class="flex items-center w-2/4">
-            <router-link to="/collections" class="w-max mx-auto" :class="{active: 'collections' === activeRoute}" @click="setActiveRoute('collections')">
+            <div class="w-auto mx-auto">
+                <div style="filter: invert(100%)" class="button-img">
+                    <img width="200" src="/images/button_nav_bar_black.svg" />
+                    <div class="text-white w-full centered">Skinner Project</div>
+                </div>
+            </div>
+
+            <router-link to="/artistsdetail" class="w-max mx-auto" :class="{active: 'artists' === activeRoute}" @click="setActiveRoute('collections')">
                 <div class="w-auto mx-auto">
                     <div style="filter: invert(100%)" class="button-img">
                         <img width="200" src="images/button_nav_bar_black.svg" />

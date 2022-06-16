@@ -43,3 +43,7 @@ Route::get('/collections', function () {
 Route::get('/tags', function() {
     return Tag::all();
 });
+
+Route::get('/viewer/{artist}/p={payload}', ['as'=>'viewer', function (Artist $artist, $payload) {
+    return View('three');
+}]);
