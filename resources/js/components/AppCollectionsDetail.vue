@@ -1,13 +1,14 @@
 <template>
     <div class="ml-4 mt-4 mb-4 flex">
         <Button src="../images/button_artist.svg" class="w-80 mr-6" text="Cokney's 3D Scans Collection" />
-        <Button src="../images/button_artist.svg" class="w-80" text="@cokney" />
+        <div class=" w-80 cursor-pointer button-img">
+            <img src="/images/button_artist.svg" />
+            <a :href="'https://www.instagram.com/' + descriptionCollection.contact_information" target="_blank" style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">{{ descriptionCollection.contact_information }}</a>
+        </div>
     </div>
     <div class="flex fixed h-full w-full bg-black">
         <div v-for="collection in descriptionCollection.collections" :key="collection.collection_id" class="w-96">
-            <!-- <router-link @click="linkCollection(collection)"> -->
                 <AppCollectionButton @click="linkCollection(collection)" :description="description(collection)" style="font-family: 'antiqueLegacy', sans-serif;" />
-            <!-- </router-link> -->
         </div>
     </div>
 </template>
@@ -40,6 +41,7 @@ export default {
     mounted() {
         this.$http.get('/api/' + this.$route.params.id + '/collections')
             .then(res => this.descriptionCollection = res.data)
+        console.log(this.descriptionCollection.contact_information)
 
 
     }
@@ -47,5 +49,8 @@ export default {
 </script>
 
 <style scoped>
-
+.button-img {
+    position: relative;
+    text-align: center;
+}
 </style>

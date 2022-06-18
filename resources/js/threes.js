@@ -33,7 +33,6 @@ var payload = window.location.href.split('p=');
 //var payload = window.location.href;
 //payload = payload.slice(payload.indexOf('p=') + 2)
 
-console.log(payload);
 
 loader.load( '/assets/data/' + payload[1] + '.glb', function ( gltf )
 {
