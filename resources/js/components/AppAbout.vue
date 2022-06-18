@@ -1,6 +1,7 @@
 <template>
     <div>
-    <AppHomeButton class="text-9xl h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="About" />
+
+        <AppHomeButton class="text-9xl h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="About" />
         <!--    first  -->
     <div class="divide-gray-900 divide-y-[2px]">
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center text-[144px]">
@@ -12,15 +13,15 @@
         <div></div>
     </div>
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-3xl text-2xl text-white child">
+                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-2xl text-white child">
                     {{ firstEdit.description }}
                 </div>
                 <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }"  class="bg-transparent ml-4 child other-child w-full h-full">
-                    <img class="img-background" src="/images/drm.jpg" alt="drm">
+                    <img style="object-fit: cover" class="img-background" src="/images/drm.jpg" alt="drm">
 
                 </div>
             <div @Click="secIsActive = !secIsActive" :class="{'slide-right': secIsActive }" class="ml-4 child w-full h-full last-child">
-                <img class="img-background" src="/images/tattoo-time-vol-4-dr-fukushi-2.jpg" alt="tattoo-time">
+                <img style="object-fit: cover" class="img-background" src="/images/tattoo-time-vol-4-dr-fukushi-2.jpg" alt="tattoo-time">
             </div>
         </div>
         <div class="h-8 w-full bg-black"></div>
@@ -36,16 +37,12 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-3xl text-2xl text-white child">
+        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-2xl text-white child">
             {{ secondEdit.description }}
         </div>
         <div style="z-index: 2;"  @Click="thirdIsActive = !thirdIsActive" :class="{'slide-right': thirdIsActive }" class="bg-transparent ml-4 child other-child w-full h-full">
-            <img class="img-background" src="/images/metashape.jpg" alt="metashape">
+            <img style="object-fit: cover" class="img-background" src="/images/metashape.jpg" alt="metashape">
         </div>
-<!--        <div @Click="thirdIsActive = !thirdIsActive" :class="{'slide-right': thirdIsActive }" class="pl-4 pt-3 rounded-3xl text-xl rounded-3xl child last-child">-->
-<!--            <div style="font-family: 'antiqueLegacy', sans-serif;" class="inline-block h-full text-xl ml-8 pt-4 mr-8">-->
-<!--            </div>-->
-<!--        </div>-->
     </div>
     <div class="h-8 w-full bg-black"></div>
 
@@ -60,15 +57,13 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-3xl text-2xl text-white child">
+        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-r-3xl text-2xl text-white child">
             {{ thirdEdit.description }}
         </div>
         <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }" class="pl-4 pt-3 rounded-3xl text-xl pr-8 child other-child">
 
         </div>
         <div @Click="secIsActive = !secIsActive" :class="{'slide-right': secIsActive }" class="pl-4 pt-3 rounded-3xl text-xl rounded-3xl child last-child">
-<!--            <div style="font-family: 'antiqueLegacy', sans-serif;" class="inline-block h-full text-xl ml-8 pt-4 mr-8">-->
-<!--            </div>-->
         </div>
     </div>
     <div class="h-8 w-full bg-black"></div>
@@ -85,7 +80,7 @@
         <div class="border-t-2 border-black bg-white">
             <div class="h-6"><br></div>
         </div>
-        <div class="border-b-2 bg-black">
+        <div class="border-y-2 bg-black">
             <div class="h-6"><br></div>
         </div>
         <AppAboutButton :description="third" :text="third.text" :colorReversed="true" />
@@ -95,9 +90,10 @@
 <script>
 import AppAboutButton from "./AppAboutButton";
 import AppHomeButton from "./AppHomeButton";
+import Button from "./Button";
 export default {
     name: "app-about",
-    components: { AppAboutButton, AppHomeButton },
+    components: { AppAboutButton, AppHomeButton, Button },
     data() {
         return {
             isActive: false,
@@ -107,11 +103,11 @@ export default {
     },
     setup: () => ({
         first: {
-            title: 'About',
+            title: '',
             text: "Skinner Project is a platform allowing tattoo artists from all over the world to present their works in 3D using photogrammetry technology. Facing a long-standing problem in the communication of tattoo artists, namely the classic photos, this platform offers a new innovative way to discover tattoos in three dimensions.",
             description : "This project began in March 2022 as part of Tanguy Morvan's practical bachelor's degree at HEAD (Haute École d'Art et de Design) in Geneva with the support of his brother Malow Morvan",
-            des: 'Info',
-            service: 'Context',
+            des: '',
+            service: '',
             counted: ''
         },
         second: {
@@ -122,78 +118,37 @@ export default {
             counted: ''
         },
         third: {
-            title: 'Contact',
+            title: 'Skinner Project © 2022',
             text: 'Don\'t hesitate to get in in touch to talk about this project and how you could be scanning your tattoos tomorrow in the Skinner Project',
+            des: 'contact@skinnerproject.com',
+            service: 'Legal',
+            counted: 'www.skinnerproject.com is property of Tanguy Morvan'
+        },
+        buttonDescription: {
+            title: '',
             des: '',
             service: '',
             counted: ''
         },
-        buttonDescription: {
-            title: 'History & Context',
-            des: 'Short',
-            service: 'Online experience',
-            counted: ''
-        },
         firstEdit: {
-            description:
-                "As mentioned in the title of the editorial, the\n" +
-                "conservation of tattoo and tattooed skin has\n" +
-                "been a challenge for previous generations.\n" +
-                "Some forward thinkers such as Dr. Masaichi\n" +
-                "Fukushi1 tried to answer this problem in the\n" +
-                "years 1930A40, in Japan. This doctor's goal\n" +
-                "was to collect and preserve the skins of\n" +
-                "tattooed Japanese2. Originally, Japanese\n" +
-                "tattooing, also called \"Irezumi\" was a practice\n" +
-                "dedicated to the Yakuzas. Masaichi Fukushi\n" +
-                "was one of the precursors of this practice of\n" +
-                "tattoo conservation and some of his pieces\n" +
-                "are today exposed in a private collection at\n" +
-                "Tokyo University's Medical Pathology Museum.",
+            description: "As mentioned in the title of the page, the conservation of tattoo and tattooed skin has been a challenge for previous generations. Some forward thinkers such as Dr. Masaichi Fukushi1 tried to answer this problem in the years 1930-40, in Japan. This doctor's goal was to collect and preserve the skins of tattooed Japanese2. Originally, Japanese tattooing, also called \"Irezumi\" was a practice dedicated to the Yakuzas. Masaichi Fukushi was one of the precursors of this practice of tattoo conservation and some of his pieces are today exposed in a private collection at Tokyo University's Medical Pathology Museum.",
             title: 'Preserving Tattooed Skin After Death'
         },
         secondEdit : {
             description:
-                'To preserve the tattoo and the works of art\n' +
-                'realized by tattoo artists around the globe\n' +
-                'turns out to be a complex and tedious task if\n' +
-                'we should use the method of Masaichi\n' +
-                'Fukushi. But today, thanks to the new\n' +
-                'techniques and the new digital production\n' +
-                'tools that we have at our disposal, it is now\n' +
-                'possible to archive and preserve these tattoos.\n' +
-                'Through photogrammetry1 (taking a picture of\n' +
-                'an object from all angles with a digital\n' +
-                'camera), we can digitize a tattoo in three\n' +
-                'dimensions and allow anyone to consult and\n' +
-                'discover it online. This platform aims to\n' +
-                'provide everyone with free access to\n' +
-                'numerous works of art made by artists of\n' +
-                'various reputations and from di¿erent\n' +
-                'backgrounds.',
+                'To preserve the tattoo and the works of art realized by tattoo artists around the globe turns out to be a complex and tedious task if we should use the method of Masaichi Fukushi. But today, thanks to the new techniques and the new digital production tools that we have at our disposal, it is now possible to archive and preserve these tattoos. Through photogrammetry (taking a picture of an object from all angles with a digital camera), we can digitize a tattoo in three dimensions and allow anyone to consult and discover it online. This platform aims to provide everyone with free access to numerous works of art made by artists of various reputations and from different backgrounds.',
             title: 'Archiving, Scanning, Digititalization'
         },
         thirdEdit: {
             description:
-                'With the rise of social networks and especially\n' +
-                'Instagram, the visibility of tattoo art has grown\n' +
-                'exponentially. However, some problems arise\n' +
-                'when we talk about conservation, archiving\n' +
-                'and consultation of these tattoos (censorship\n' +
-                'of instagram towards genital parts, etc). Given\n' +
-                'the inherent materiality of the tattoo (ink in the\n' +
-                'skin, around a leg, an arm), photography\n' +
-                'remains a medium too limited for a complete\n' +
-                'conservation of the tattoo. This platform aims\n' +
-                'at answering these numerous problems thanks\n' +
-                'to new technologies (photogrammetry and 3D).',
+                'With the rise of social networks and especially Instagram, the visibility of tattoo art has grown exponentially. However, some problems arise when we talk about conservation, archiving and consultation of these tattoos (censorship of instagram towards genital parts, etc). Given the inherent materiality of the tattoo (ink in the skin, around a leg, an arm), photography remains a medium too limited for a complete conservation of the tattoo. This platform aims at answering these numerous problems thanks to new technologies (photogrammetry and 3D).',
             title: 'Preserving Tattooed Skin After Death'
         },
     })
 }
 </script>
 
-<style>
+<style scoped>
 
 .img-background {
     border-radius: 20px;
@@ -202,9 +157,8 @@ export default {
 }
 .superpose {
     position: relative;
-    width: 50%;
-    height: 450px;
-    margin-left: 10px;
+    width: 40%;
+    height: 500px;
 }
 .child {
     z-index: 2;

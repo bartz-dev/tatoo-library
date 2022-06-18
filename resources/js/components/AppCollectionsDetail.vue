@@ -25,7 +25,6 @@ export default {
     },
     methods: {
         description(collection) {
-            console.log(collection)
             return {
                 collectionName: collection.nom_court,
                 location: collection.location,
@@ -39,7 +38,7 @@ export default {
         }
     },
     mounted() {
-        this.$http.get('/' + this.$route.params.id + '/collections')
+        this.$http.get('/api/' + this.$route.params.id + '/collections')
             .then(res => this.descriptionCollection = res.data)
 
 

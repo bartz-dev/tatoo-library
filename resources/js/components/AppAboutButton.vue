@@ -8,20 +8,20 @@
                 <p>{{ secondText }}</p>
             </div>
         </div>
-        <div v-if="colorReversed" v-bind:class="{'text-cols': colorReversed, 'border-black border-b-2': colorReversed}" class="background-white">
+        <div v-if="colorReversed" v-bind:class="{'text-cols': colorReversed, 'border-black border-y-2': colorReversed}" class="background-white">
             <div class="h-6"><br></div>
         </div>
 
-        <div v-bind:class="{'text-cols': colorReversed}" class="flex">
-            <div class="h-6"><br></div>
-            <div class="text-xl text-black flex items-center w-1/3">
-                <div class="mx-auto">{{ description.title }}</div>
+        <div style="font-family: 'antiqueLegacy', sans-serif;" v-bind:class="{'text-cols': colorReversed}" class="text-md flex">
+            <div class="h-10"><br></div>
+            <div class="text-black flex items-center w-1/2">
+                <div class="ml-4">{{ description.title }}</div>
                 <div class="mx-auto">{{ description.des }}</div>
 
             </div>
-            <div class="text-xl text-black flex items-center w-1/3">
-                <div class="mx-auto">{{ description.counted !== '' ? description.counted + ' Collections' : '' }}</div>
-                <div class="mx-auto">{{ description.service }}</div>
+            <div class="text-black flex items-center w-1/2">
+                <div class="mx-auto">{{  description.counted ?? '' }}</div>
+                <div class="mr-4">{{ description.service }}</div>
             </div>
         </div>
     </div>

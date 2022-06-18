@@ -62,14 +62,6 @@ export const routes = [
         }
     },
     {
-        path: '/editorial',
-        name: 'Editorial',
-        components: {
-            default: AppEditorialInfo,
-            Menu: AppMenu
-        }
-    },
-    {
         path: '/appointment',
         name: 'Appointment',
         components: {

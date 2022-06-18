@@ -1,19 +1,22 @@
 <template>
 <div class="fixed h-full">
     <div class="flex border-t border-black w-full h-full">
-        <div class="flex-col border-r-2 border-black w-96">
-            <div class="mt-4">
-                <Button style="width: 99%" :reversed="activeList === 0"  :src="activeList === 1 ? 'images/button_artist.svg' : 'images/button_artist_black.svg'" text="Filters" @click="activeList = 0" />
+        <div class="text-3xl flex-col border-r-2 border-black w-96">
+            <div class="m-4">
+                <Button style="width: 99%" :reversed="activeList === 0"  :src="activeList === 1 ? '/images/filters.svg' : '/images/filters.svg'" text="Filters" @click="activeList = 0" />
             </div>
-            <div class="mt-4">
-                <Button style="width: 99%" :reversed="activeList === 1"  :src="activeList === 1 ? 'images/button_artist_black.svg' : 'images/button_artist.svg'" text="Style" @click="activeList = 1" />
+            <div class="m-4">
+                <Button style="width: 99%" src="/images/style-bodypart.svg" text="Style" />
+            </div>
+            <div class="m-4">
+                <Button style="width: 99%" src="/images/style-bodypart.svg" text="Body Part" />
             </div>
         </div>
         <div class="flex-col">
             <div class="mt-4" v-for="(artist, index) in artists" :key="artist.artist_id">
                 <router-link :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
-                    <ButtonArtist v-if="!pair(index)" :reversed="pair(index)" src="images/button_artist_black.svg"  :text="artist.nom" />
-                    <ButtonArtist v-else src="images/button_artist.svg"  :text="artist.nom" />
+                    <ButtonArtist v-if="!pair(index)" :reversed="pair(index)" src="/images/button_artist_black.svg"  :text="artist.nom" />
+                    <ButtonArtist v-else src="/images/button_artist.svg"  :text="artist.nom" />
                 </router-link>
             </div>
         </div>

@@ -20,19 +20,7 @@
                     </div>
                 </div>
             </router-link>
-
-                    <div>
-                        <router-link to="/editorial" :class="{active: 'editorial' === activeRoute}" @click="setActiveRoute('editorial')">
-                            <div class="button-img">
-                                <img v-if="activeRoute.toLowerCase() === 'editorial'" width="200" src="/images/button_nav_bar_black.svg">
-                                <img v-else width="200" src="/images/button-nav-bar.svg" />
-                                <div :class="{'text-white': activeRoute.toLowerCase() === 'editorial'}" class="w-full centered">Editorial</div>
-                            </div>
-                        </router-link>
-                    </div>
         </div>
-
-
 
         <div class="flex items-center w-1/3" style="overflow: hidden">
             <div class="w-auto ml-auto">

@@ -32,18 +32,38 @@ Route::prefix('/artists')->group(function () {
     });
 });
 
-Route::get('/{artist}/collections', function (Artist $artist) {
-    return $artist->load('collections');
-});
 
-Route::get('/collections', function () {
-    return Collection::all();
-});
-
-Route::get('/tags', function() {
-    return Tag::all();
-});
 
 Route::get('/viewer/{artist}/p={payload}', ['as'=>'viewer', function (Artist $artist, $payload) {
     return View('three');
 }]);
+
+Route::get('/viewer/{artist}/p={payload}/{any}', ['as'=>'viewer', function (Artist $artist, $payload) {
+    return View('welcome');
+}])->where('any', '.*');;
+
+// Route::prefix('/artists')->group(function () {
+//     Route::get('/', function () {
+//         return Artist::all();
+//     })->name('show');
+
+//     Route::prefix('/')->group(function () {
+//         Route::get('{artist}', function (Artist $artist) {
+//             return $artist;
+//         })->name('index');
+//     });
+// });
+
+// Route::get('/{artist}/collections', function (Artist $artist) {
+//     return $artist->load('collections');
+// });
+
+// Route::get('/collections', function () {
+//     return Collection::all();
+// });
+
+// Route::get('/tags', function() {
+//     return Tag::all();
+// });
+
+

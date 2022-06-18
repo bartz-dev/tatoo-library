@@ -1,10 +1,10 @@
 <template>
+    <div>
 
-    <div style="position:relative">
-        <video src="/assets/home_background.mp4" autoplay muted loop></video>
+        <video v-if="isNotViewer" src="/assets/homepage-background.mp4" autoplay muted loop></video>
         <app-second-menu />
-         <router-link to="/artistsdetail">
-            <img style="font-family: 'antiqueLegacy', sans-serif;" class="title-img" src="images/title-screen.svg" alt="title" />
+         <router-link v-if="isNotViewer" to="/artistsdetail">
+            <img style="font-family: 'antiqueLegacy', sans-serif;" class="title-img" src="/images/artist_home.png" alt="title" />
          </router-link>
     </div>
 </template>
@@ -18,8 +18,17 @@ export default {
     methods: {
         goToCollections() {
             this.$router.push('/collections');
+        },
+        isNotViewer() {
+            console.log(window.location.href)
+            return window.location.href.indexOf('viewer') !== -1;
         }
     },
+    mounted() {
+        // if (window.location.href.indexOf('viewer') !== -1) {
+        //     window.location.href = window.location.href.slice(0,  window.location.href.indexOf('/viewer'));
+        // }
+    }
 }
 </script>
 <style scoped>

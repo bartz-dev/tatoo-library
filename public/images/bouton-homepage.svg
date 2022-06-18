@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="281" viewBox="0 0 1680 281">
+
+  <g id="Composant_81_1" data-name="Composant 81 – 1" style="mix-blend-mode: difference;isolation: isolate">
+    <g id="Rectangle_226" data-name="Rectangle 226" transform="translate(0 21)" fill="none" stroke="#fff" stroke-width="4">
+      <rect width="1680" height="260" rx="130" stroke="none"/>
+      <rect x="2" y="2" width="1676" height="256" rx="128" fill="none"/>
+    </g>
+    <g id="Rectangle_192" data-name="Rectangle 192" transform="translate(60 21)" fill="none" stroke="#fff" stroke-width="4">
+      <rect width="1560" height="260" rx="130" stroke="none"/>
+      <rect x="2" y="2" width="1556" height="256" rx="128" fill="none"/>
+    </g>
+      <text id="Skinner_Project" data-name="Skinner Project" transform="translate(123 210)" fill="#fff" font-size="200" font-family="AntiqueLegacy" font-weight="600" letter-spacing="-0.02em"><tspan x="0" y="0">Skinner </tspan><tspan y="0" font-family="AntiqueLegacy" font-style="italic">Project</tspan></text>
+      <text id="Archiving_and_Curating_Tattoos" data-name="Archiving and Curating Tattoos" transform="translate(138 241)" fill="#fff" font-size="20" font-family="AntiqueLegacy"><tspan x="0" y="0">Archiving and Curating Tattoos</tspan></text>
+      <text id="An_Online_Experience" data-name="An Online Experience" transform="translate(620 241)" fill="#fff" font-size="20" font-family="AntiqueLegacy"><tspan x="0" y="0">An Online Experience</tspan></text>
+      <text id="In_Open_Access" data-name="In Open Access" transform="translate(1396 241)" fill="#fff" font-size="20" font-family="AntiqueLegacy"><tspan x="0" y="0">In Open Access</tspan></text>
+
+  </g>
+    <defs>
+        <style type="text/css">
+            @font-face {
+            font-family: AntiqueLegacy, sans-serif;
+            src: url('/../font/antiqueLegacyBook.otf');
+            }
+        </style>
+    </defs>
+</svg>
+
+

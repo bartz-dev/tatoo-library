@@ -1,7 +1,7 @@
 <template>
     <div class="cursor-pointer button-img">
         <img :src="src" />
-        <div :class="{'text-white': reversed, 'text-black': !reversed}" class="w-4/6 centered">{{ text }}</div>
+        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">{{ text }}</div>
     </div>
 </template>
 

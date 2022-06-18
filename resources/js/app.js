@@ -8,7 +8,6 @@ import {createRouter, createWebHistory} from 'vue-router'
 import {routes} from "./route";
 import {store} from "./store";
 import axios from "axios";
-import AppMenu from './components/AppMenu'
 
 const router = createRouter({
     mode: 'history',
