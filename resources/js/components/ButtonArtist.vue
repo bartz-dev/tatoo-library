@@ -4,7 +4,7 @@
             <img style="width: 100%" :src="src" />
 
         </div>
-        <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-6xl w-4/6 centered">{{ text }}</div>
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-8xl w-4/6 centered">{{ text }}</div>
         <div class="w-4/6 centered"></div>
     </div>
 </template>
