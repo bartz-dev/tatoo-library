@@ -3,7 +3,7 @@
         <div class="absolute w-full">
             <div style="width: 100%; height: 101px; background-size: 100%;background-repeat: no-repeat;"></div>
         </div>
-        <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-8xl centered">{{ text }}</div>
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="w-max text-8xl centered">{{ text }}</div>
         <div class="w-4/6 centered"></div>
     </div>
 
