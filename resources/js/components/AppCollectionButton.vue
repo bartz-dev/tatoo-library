@@ -8,10 +8,8 @@
             <div>{{ description.session }}</div>
         </div>
         <div>
-        <div>
                 <video :src="description.payload + '.mp4'" autoplay muted loop></video>
 
-        </div>
         </div>
         <div class="rounded-b-2xl h-8 w-full bg-white flex justify-center items-center">Click on the + to explore the 3D Scan</div>
     </div>

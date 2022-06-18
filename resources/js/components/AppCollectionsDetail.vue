@@ -30,7 +30,7 @@ export default {
             return {
                 collectionName: collection.nom_court,
                 location: collection.location,
-                physiqueLocation: 'On Malow',
+                physiqueLocation: collection.position,
                 session: collection.description,
                 payload: '../assets/data/' + collection.payload
             }
