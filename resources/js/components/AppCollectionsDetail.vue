@@ -3,7 +3,7 @@
         <Button src="../images/button_artist.svg" class="w-80 mr-6" :text="descriptionCollection.surnom + '\'s 3D Scans Collection'" />
         <div class=" w-80 cursor-pointer button-img">
             <img src="/images/button_artist.svg" />
-            <a :href="'https://www.instagram.com/' + descriptionCollection.contact_information" target="_blank" style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">'@' + {{ descriptionCollection.contact_information }}</a>
+            <a :href="'https://www.instagram.com/' + descriptionCollection.contact_information" target="_blank" style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">@{{ descriptionCollection.contact_information }}</a>
         </div>
     </div>
     <div class="flex fixed h-full w-full bg-black">
