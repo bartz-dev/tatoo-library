@@ -1,5 +1,5 @@
 <template>
-    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full inline-flex h-7">
+    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full mb-4 flex h-7">
         <div class="flex items-center w-4/6" style="overflow: hidden;">
             <router-link to="/" :class="{active: 'home' === activeRoute}" @click="setActiveRoute('home')">
                 <div>
@@ -34,57 +34,6 @@
             </div>
         </div>
     </div>
-    <!--        <div class="w-auto mx-auto">-->
-<!--            <router-link to="/library" class="py-8 border-[#35395a] w-max mx-auto main-menu-link" :class="{active: 'library' === activeRoute}" @click="setActiveRoute('library')">-->
-<!--&lt;!&ndash;                <div class="w-full h-full" style="background-color: transparent;">Library</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <a href=""></a>&ndash;&gt;-->
-<!--                <div class="button-img">-->
-<!--                    <img width="200" src="../images/button-nav-bar.svg" />-->
-<!--                    <div class="centered">Library</div>-->
-<!--                </div>-->
-<!--            </router-link>-->
-<!--        </div>-->
-
-<!--        <div class="w-auto mx-auto">-->
-<!--            <router-link to="/editorial" class="py-8 border-[#35395a] w-max mx-auto main-menu-link" :class="{active: 'editorial' === activeRoute}" @click="setActiveRoute('editorial')">-->
-<!--                <div class="button-img">-->
-<!--                    <img width="200" src="../images/button-nav-bar.svg" />-->
-<!--                    <div class="centered">Editorial</div>-->
-<!--                </div>-->
-<!--            </router-link>-->
-<!--        </div>-->
-
-<!--        <div class="w-auto mx-auto">-->
-<!--            <router-link to="/appointment" class="py-8 border-[#35395a] w-max mx-auto main-menu-link" :class="{active: 'appointment' === activeRoute}" @click="setActiveRoute('appointment')">-->
-<!--                <div class="button-img">-->
-<!--                    <img width="200" src="../images/button-nav-bar.svg" />-->
-<!--                    <div class="centered">Appointment</div>-->
-<!--                </div>-->
-<!--            </router-link>-->
-<!--        </div>-->
-
-<!--        <div class="w-auto mx-auto">-->
-<!--            <router-link to="/about" class="py-8 border-[#35395a] w-max mx-auto main-menu-link" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">-->
-<!--                <div class="button-img">-->
-<!--                    <img width="200" src="../images/button-nav-bar.svg" />-->
-<!--                    <div class="centered">About</div>-->
-<!--                </div>-->
-<!--            </router-link>-->
-<!--        </div>-->
-
-<!--        <div class="w-auto mx-auto">-->
-<!--            <router-link to="/contactform" class="py-8 border-[#35395a] w-max mx-auto main-menu-link" :class="{active: 'contactform' === activeRoute}" @click="setActiveRoute('contactform')">-->
-<!--                <div class="button-img">-->
-<!--                    <img width="200" src="../images/button-nav-bar.svg" />-->
-<!--                    <div class="centered">Contact</div>-->
-<!--                </div>-->
-<!--            </router-link>-->
-<!--        </div>-->
-<!--    <div class="h-20 grid grid-cols-1 divide-gray-900 divide-y-[2px]">-->
-<!--        <div><br></div>-->
-<!--        <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-6xl">Collections 1</div>-->
-<!--        <div><br></div>-->
-<!--    </div>-->
 </template>
 
 <script>

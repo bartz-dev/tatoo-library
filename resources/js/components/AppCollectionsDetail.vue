@@ -1,4 +1,5 @@
 <template>
+    <div style="height: 1px" class="w-full bg-black"></div>
     <div class="ml-4 mt-4 mb-4 flex">
         <Button src="../images/button_artist.svg" class="w-80 mr-6" :text="descriptionCollection.surnom + '\'s 3D Scans Collection'" />
         <div class=" w-80 cursor-pointer button-img">

@@ -3,7 +3,7 @@ var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHe
 
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputEncoding = THREE.sRGBEncoding;
-renderer.setPixelRatio(window.devicePixelRatio);
+// renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize( window.innerWidth, window.innerHeight );
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 document.getElementById('threejs').appendChild( renderer.domElement );
@@ -13,18 +13,22 @@ var id = null;
 const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 directionalLight.position.set(0, 1, 0);
 directionalLight.castShadow = true;
-scene.add(directionalLight);
-const light = new THREE.PointLight(0xffffcc, 1);
-light.position.set(0, 600, 1000);
+scene.add( directionalLight );
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(0, 60, 100);
+light.castShadow = true;
 scene.add(light);
-const light2 = new THREE.PointLight(0xe6f7ff, 1);
-light2.position.set(1000, 200, 0);
+const light2 = new THREE.DirectionalLight(0xe6f7ff, 1);
+light2.position.set(100, 20, 0);
+light2.castShadow = true;
 scene.add(light2);
-const light3 = new THREE.PointLight(0xfff2e6, 1);
-light3.position.set(0, 200, -1000);
+const light3 = new THREE.DirectionalLight(0xfff2e6, 1);
+light3.position.set(0, 20, -100);
+light3.castShadow = true;
 scene.add(light3);
-const light4 = new THREE.PointLight(0xc4c400, 1);
-light4.position.set(-1000, 600, 1000);
+const light4 = new THREE.DirectionalLight(0xc4c400, 1);
+light4.position.set(-100, 60, 100);
+light4.castShadow = true;
 scene.add(light4);
 
 const loader = new THREE.GLTFLoader();
@@ -48,10 +52,10 @@ loader.load( '/assets/data/' + payload[1] + '.glb', function ( gltf )
       const boxCenter = box.getCenter(new THREE.Vector3());
 
       // set the camera to frame the box
-      frameArea(boxSize * 0.5, boxSize, boxCenter, camera);
+      frameArea(boxSize, boxSize, boxCenter, camera);
 
       // update the Trackball controls to handle the new size
-      controls.maxDistance = boxSize * 10;
+      controls.maxDistance = boxSize;
       controls.target.copy(boxCenter);
       controls.update();
 } );
@@ -99,7 +103,7 @@ camera.far = boxSize * 100;
 camera.updateProjectionMatrix();
 
 // point the camera to look at the center of the box
-camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z);
+camera.lookAt(boxCenter.x, boxCenter.y, boxCenter.z + 20);
 }
 
 animate();
