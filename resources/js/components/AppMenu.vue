@@ -113,7 +113,6 @@ export default {
 .button-img {
     position: relative;
     text-align: center;
-    color: black;
 }
 .centered {
     position: absolute;

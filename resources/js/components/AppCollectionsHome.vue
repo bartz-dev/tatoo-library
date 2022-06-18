@@ -15,12 +15,11 @@
         <div class="flex-col">
             <div class="mt-4" v-for="(artist, index) in artists" :key="artist.artist_id">
                 <router-link :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
-                    <ButtonArtist v-if="!pair(index)" :reversed="pair(index)" src="/images/button_artist_black.svg"  :text="artist.nom" />
-                    <ButtonArtist v-else src="/images/button_artist.svg"  :text="artist.nom" />
+                    <ButtonArtist v-if="pair(index)" :reversed="pair(index)" src="/images/button_artist_black.svg" class="text-white" :text="artist.nom" />
+                    <ButtonArtist v-else :reversed="!pair(index)" class="text-black" src="/images/button_artist.svg"  :text="artist.nom" />
                 </router-link>
             </div>
         </div>
-
     </div>
 </div>
 </template>
@@ -59,7 +58,8 @@ export default {
     },
     methods: {
         pair(num) {
-            return num % 2 == 0;
+            console.log(num)
+            return (num + 1) % 2 <= 0;
         }
     },
     mounted() {
