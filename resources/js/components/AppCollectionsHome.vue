@@ -1,6 +1,6 @@
 <template>
-<div class="fixed h-full">
-    <div class="flex border-t border-black w-full h-full">
+<div>
+    <div class="absolute flex border-t border-black w-full h-full">
         <div class="text-3xl flex-col border-r-2 border-black w-96">
             <div class="m-4">
                 <Button style="width: 99%" :reversed="activeList === 0"  :src="activeList === 1 ? '/images/filters.svg' : '/images/filters.svg'" text="Filters" @click="activeList = 0" />
@@ -12,8 +12,8 @@
                 <Button style="width: 99%" src="/images/style-bodypart.svg" text="Body Part" />
             </div>
         </div>
-        <div class="flex-col">
-            <div class="mt-4" v-for="(artist, index) in artists" :key="artist.artist_id">
+        <div class="w-full">
+            <div class="m-3" v-for="(artist, index) in artists" :key="artist.artist_id">
                 <router-link :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
                     <ButtonArtist v-if="pair(index)" :reversed="pair(index)" src="/images/button_artist_black.svg" class="text-white" :text="artist.nom" />
                     <ButtonArtist v-else :reversed="!pair(index)" class="text-black" src="/images/button_artist.svg"  :text="artist.nom" />

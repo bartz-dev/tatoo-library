@@ -1,7 +1,7 @@
 <template>
     <div style="width: 98%" class="mx-auto cursor-pointer button-img">
         <div>
-            <img :src="src" />
+            <img style="width: 100%" :src="src" />
 
         </div>
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-6xl w-4/6 centered">{{ text }}</div>
