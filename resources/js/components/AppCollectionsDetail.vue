@@ -1,6 +1,6 @@
 <template>
     <div class="ml-4 mt-4 mb-4 flex">
-        <Button src="../images/button_artist.svg" class="w-80 mr-6" text="Cokney's 3D Scans Collection" />
+        <Button src="../images/button_artist.svg" class="w-80 mr-6" :text="descriptionCollection.surnom + '\'s 3D Scans Collection'" />
         <div class=" w-80 cursor-pointer button-img">
             <img src="/images/button_artist.svg" />
             <a :href="'https://www.instagram.com/' + descriptionCollection.contact_information" target="_blank" style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">{{ descriptionCollection.contact_information }}</a>
