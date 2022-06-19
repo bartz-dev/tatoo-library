@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <AppHomeButton class="text-[144px] h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="About" />
+        <AppHomeButton class="h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="About" />
         <!--    first  -->
     <div class="divide-gray-900 divide-y-[2px]">
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center text-[144px]">
