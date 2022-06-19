@@ -1,10 +1,10 @@
 <template>
     <div v-bind:class="{'revert-style': colorReversed}">
         <div  class="p-6 bg-white text-5xl antiqueLegacy flex w-full">
-            <div class="text-center">
+            <div class="w-4/6 flex-initial text-center">
                 <p class="ml-4 text-left inline-block">{{ text }}</p>
             </div>
-            <div class="ml-12 mr-12 w-full">
+            <div class="w-2/6 flex-initial ml-12 mr-12 w-full">
                 <p>{{ secondText }}</p>
             </div>
         </div>

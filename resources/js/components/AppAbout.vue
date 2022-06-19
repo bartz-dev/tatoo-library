@@ -13,7 +13,7 @@
         <div></div>
     </div>
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-3xl xl:text-5xl text-white child">
+                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
                     {{ firstEdit.description }}
                 </div>
                 <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }"  class="bg-transparent ml-4 child other-child w-full h-full">
@@ -37,7 +37,7 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-3xl xl:text-5xl text-white child">
+        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
             {{ secondEdit.description }}
         </div>
         <div style="z-index: 2;"  @Click="thirdIsActive = !thirdIsActive" :class="{'slide-right': thirdIsActive }" class="bg-transparent ml-4 child other-child w-full h-full">
@@ -57,7 +57,7 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-r-3xl text-3xl xl:text-5xl text-white child">
+        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
             {{ thirdEdit.description }}
         </div>
         <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }" class="pl-4 pt-3 rounded-3xl text-xl pr-8 child other-child">
