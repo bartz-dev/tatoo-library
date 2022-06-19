@@ -1,14 +1,14 @@
 <template>
     <div class="w-full items-center flex h-8 view left-sidebar pt-8">
-        <div class="ml-4 flex items-center w-2/6">
-            <div class="w-auto mx-auto">
+        <div class="flex items-center w-3/6">
+            <div class="ml-4 w-auto">
                 <div class="button-img">
                     <img width="175" src="/images/skinner_project_home.svg" />
                     <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-white w-full centered">Skinner Project</div>
                 </div>
             </div>
 
-            <router-link to="/artistsdetail" class="w-max mx-auto" :class="{active: 'artists' === activeRoute}" @click="setActiveRoute('collections')">
+            <router-link to="/artistsdetail" class="w-max" :class="{active: 'artists' === activeRoute}" @click="setActiveRoute('collections')">
                 <div class="w-auto mx-auto">
                     <div style="filter: invert(100%)" class="button-img">
                         <img width="200" src="/images/button_nav_bar_black.svg" />
@@ -17,23 +17,14 @@
                 </div>
             </router-link>
         </div>
-
-        <div class="flex-initial w-2/3">
-
-        </div>
-
-        <div class="flex items-center w-1/3">
-            <div class="w-1/3"></div>
-            <div class="w-auto mx-auto">
-                <router-link to="/about" class=" w-max mx-auto" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
+        <div class="flex w-2/6"></div>
+            <router-link to="/about" class="ml-auto" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
                     <div style="filter: invert(100%)" class="button-img">
                         <img width="200" src="/images/button_nav_bar_black.svg" />
                         <div class="text-white centered">About</div>
                     </div>
-                </router-link>
-            </div>
+            </router-link>
         </div>
-    </div>
 </template>
 
 <script>

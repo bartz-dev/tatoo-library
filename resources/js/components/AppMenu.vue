@@ -1,6 +1,6 @@
 <template>
-    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full mb-4 flex h-7">
-        <div class="flex items-center w-4/6" style="overflow: hidden;">
+    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full mb-4 flex h-8">
+        <div class="flex items-center w-4/6">
             <router-link to="/" :class="{active: 'home' === activeRoute}" @click="setActiveRoute('home')">
                 <div>
                     <div class="button-img">
@@ -22,7 +22,7 @@
             </router-link>
         </div>
 
-        <div class="flex items-center w-1/3" style="overflow: hidden">
+        <div class="flex items-center w-1/3">
             <div class="w-auto ml-auto">
                 <router-link to="/about" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
                     <div class="button-img">

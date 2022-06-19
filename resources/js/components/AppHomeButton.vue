@@ -4,7 +4,7 @@
             <div class="h-6"><br></div>
         </div>
         <div  class="relative button-border main-menu-link flex items-center justify-center h-40 w-full">
-            <div style="height: 200px;" class="text-center w-full">
+            <div style="height: 25vh;display: contents" class="text-center w-full">
                 <img style="width: 99%; height: 100%;" class="revert-style mx-auto" src="/images/bouton-about-final.svg" />
                 <div :class="{'text-white': reversed, 'text-black': !reversed}" style="font-family: 'antiqueLegacy', sans-serif;" class="w-4/6 centered">{{ text }}</div>
 
