@@ -7,9 +7,9 @@
             <div>{{ description.physiqueLocation }}</div>
             <div>{{ description.session }}</div>
         </div>
-        <div>
-                <video :src="description.payload + '.mp4'" autoplay muted loop></video>
-
+        <div class="relative inline-block">
+            <video :src="description.payload + '.mp4'" autoplay muted loop></video>
+            <div class="icon-plus hover:bg-[url(/images/button-plus-noir.png)] bg-[url(/images/button-plus.png)]"></div>
         </div>
         <div class="rounded-b-2xl h-8 w-full bg-white flex justify-center items-center">Click on the + to explore the 3D Scan</div>
     </div>
@@ -25,5 +25,14 @@ export default {
 </script>
 
 <style scoped>
-
+.icon-plus {
+    position: absolute;
+    left: 88%;
+    top: 5%;
+    transform: translateY(-50%);
+    background-size: contain;
+    width: 30px;
+    background-repeat: no-repeat;
+    height: 40px;
+}
 </style>
