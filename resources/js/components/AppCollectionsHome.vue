@@ -8,14 +8,21 @@
             <div class="m-4">
                 <Button style="width: 99%" src="/images/style-bodypart.svg" text="Style" />
             </div>
-            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-blue-700 text-center">All</div>
-            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Japanese</div>
-            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Tribal</div>
-            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">BlackWork</div>
-            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Floral</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-blue-700 text-center">All</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Japanese</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Tribal</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">BlackWork</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Floral</div>
             <div class="m-4">
                 <Button style="width: 99%" src="/images/style-bodypart.svg" text="Body Part" />
             </div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Arms</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Legs</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Torso</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Shoulders</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Back</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Glutes</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-3xl text-center">Calves</div>
         </div>
         <div class="w-full">
             <div class="m-3" v-for="(artist, index) in artists" :key="artist.artist_id">
