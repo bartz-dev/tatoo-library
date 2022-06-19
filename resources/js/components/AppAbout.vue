@@ -112,14 +112,14 @@ export default {
         },
         second: {
             title: '',
-            text: 'Born from the mix of passions (tattoos and digital design) of the graphic designer Tanguy Morvan, the project [InkedIn] Ànds its place in an experimental initiative but remains completely functional and can serve each artist who wishes it. Don\'t hesitate to get in in touch to talk about this project and how you could be scanning your tattoos tomorrow in the Skinner',
+            text: 'Born from the mix of passions (tattoos and digital design) of the graphic designer Tanguy Morvan, the Skinner Project finds its place in an experimental initiative but remains completely functional and can serve each artist who wishes it.',
             des: '',
             service: '',
             counted: ''
         },
         third: {
             title: 'Skinner Project © 2022',
-            text: 'Don\'t hesitate to get in in touch to talk about this project and how you could be scanning your tattoos tomorrow in the Skinner Project',
+            text: 'Don\'t hesitate to get in in touch to talk about this project and how you could be scanning your tattoos tomorrow.',
             des: 'contact@skinnerproject.com',
             service: 'Legal',
             counted: 'www.skinnerproject.com is property of Tanguy Morvan'
