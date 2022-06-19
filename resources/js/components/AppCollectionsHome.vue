@@ -27,12 +27,6 @@
         <div class="w-full">
             <div class="m-3" v-for="(artist, index) in artists" :key="artist.artist_id">
                 <router-link class="relative" :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
-                    <!-- <img class="absolute" src="/images/rectangle_border.svg" />
- -->
-                    <div style="top: -1px; height: 100%; width:100%" class="absolute">
-                        <img v-if="pair(index)" style="height: 103px; width:100%" src="/images/pngnoir.png" />
-                        <img v-else style="height: 103px; width:100%" src="/images/png_blanc.png" />
-                    </div>
                     <ButtonArtist v-if="pair(index)" :reversed="pair(index)" :src="'/assets/' + artist.payload+ '.jpg'" v-bind:class="'rounded-[100px] bg-black text-white hover:bg-[url(/assets/' + artist.payload + '.jpg)]'" :text="artist.nom" />
                     <ButtonArtist v-else :reversed="!pair(index)" v-bind:class="'rounded-[100px] bg-white text-black hover:bg-[url(/assets/' + artist.payload + '.jpg)]' " :src="'/assets/' + artist.payload + '.jpg'"   :text="artist.nom" />
                 </router-link>

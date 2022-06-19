@@ -1,5 +1,9 @@
 <template>
     <div  style="width: 98%; height: 101px; background-size: 100%;background-repeat: no-repeat;" class="absolute rounded-[100px]  mx-auto cursor-pointer button-img">
+        <div style="top: -1px; height: 100%; width:100%" class="absolute">
+            <img v-if="!reversed" style="height: 103px; width:100%" src="/images/pngnoir.png" />
+            <img v-else style="height: 103px; width:100%" src="/images/png_blanc.png" />
+        </div>
         <div class="absolute w-full">
             <div style="width: 100%; height: 101px; background-size: 100%;background-repeat: no-repeat;"></div>
         </div>
