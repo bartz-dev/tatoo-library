@@ -7,7 +7,7 @@
             <div>{{ description.physiqueLocation }}</div>
             <div>{{ description.session }}</div>
         </div>
-        <div class="relative inline-block">
+        <div class="border-x-2 border-black relative inline-block">
             <video :src="description.payload + '.mp4'" autoplay muted loop></video>
             <div class="icon-plus hover:bg-[url(/images/button-plus-noir.png)] bg-[url(/images/button-plus.png)]"></div>
         </div>
@@ -27,12 +27,12 @@ export default {
 <style scoped>
 .icon-plus {
     position: absolute;
-    left: 88%;
-    top: 5%;
+    left: 85%;
+    top: 8%;
     transform: translateY(-50%);
     background-size: contain;
-    width: 30px;
+    width: 60px;
     background-repeat: no-repeat;
-    height: 40px;
+    height: 84px;
 }
 </style>

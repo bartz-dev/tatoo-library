@@ -6,7 +6,7 @@
                     <div class="button-img">
                         <img v-if="activeRoute.toLowerCase() === 'home'" width="200" src="/images/button_nav_bar_black.svg">
                         <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="w-full centered">Skinner Project</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="w-full centered">Skinner Project</div>
                     </div>
                 </div>
             </router-link>
@@ -16,7 +16,7 @@
                     <div class="button-img">
                         <img v-if="activeRoute.toLowerCase() === 'artists'" width="200" src="/images/button_nav_bar_black.svg">
                         <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div :class="{'text-white': activeRoute.toLowerCase() === 'artists'}" class="w-full centered">Artists</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'artists'}" class="w-full centered">Artists</div>
                     </div>
                 </div>
             </router-link>
@@ -28,7 +28,7 @@
                     <div class="button-img">
                         <img v-if="activeRoute.toLowerCase() === 'about'" width="200" src="/images/button_nav_bar_black.svg">
                         <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div :class="{'text-white': activeRoute.toLowerCase() === 'about'}" class="w-full centered">About</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'about'}" class="w-full centered">About</div>
                     </div>
                 </router-link>
             </div>
