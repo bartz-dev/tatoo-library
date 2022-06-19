@@ -131,7 +131,7 @@ export default {
             counted: ''
         },
         firstEdit: {
-            description: "As mentioned in the title of the page, the conservation of tattoo and tattooed skin has been a challenge for previous generations. Some forward thinkers such as Dr. Masaichi Fukushi1 tried to answer this problem in the years 1930-40, in Japan. This doctor's goal was to collect and preserve the skins of tattooed Japanese2. Originally, Japanese tattooing, also called \"Irezumi\" was a practice dedicated to the Yakuzas. Masaichi Fukushi was one of the precursors of this practice of tattoo conservation and some of his pieces are today exposed in a private collection at Tokyo University's Medical Pathology Museum.",
+            description: "As mentioned in the title of the page, the conservation of tattoo and tattooed skin has been a challenge for previous generations. Some forward thinkers such as Dr. Masaichi Fukushi tried to answer this problem in the years 1930-40, in Japan. This doctor's goal was to collect and preserve the skins of tattooed Japanese. Originally, Japanese tattooing, also called \"Irezumi\" was a practice dedicated to the Yakuzas. Masaichi Fukushi was one of the precursors of this practice of tattoo conservation and some of his pieces are today exposed in a private collection at Tokyo University's Medical Pathology Museum.",
             title: 'Preserving Tattooed Skin After Death'
         },
         secondEdit : {
