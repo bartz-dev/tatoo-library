@@ -12,7 +12,7 @@
                 <div class="w-auto mx-auto">
                     <div style="filter: invert(100%)" class="button-img">
                         <img width="200" src="/images/button_nav_bar_black.svg" />
-                        <div class="text-white centered">Artists</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif" class="text-white centered">Artists</div>
                     </div>
                 </div>
             </router-link>
@@ -21,7 +21,7 @@
             <router-link to="/about" class="ml-auto" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
                     <div style="filter: invert(100%)" class="button-img">
                         <img width="200" src="/images/button_nav_bar_black.svg" />
-                        <div class="text-white centered">About</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif" class="text-white centered">About</div>
                     </div>
             </router-link>
         </div>
