@@ -8,6 +8,11 @@
             <div class="m-4">
                 <Button style="width: 99%" src="/images/style-bodypart.svg" text="Style" />
             </div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-blue-700 text-center">All</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Japanese</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Tribal</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">BlackWork</div>
+            <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-4xl text-center">Floral</div>
             <div class="m-4">
                 <Button style="width: 99%" src="/images/style-bodypart.svg" text="Body Part" />
             </div>
