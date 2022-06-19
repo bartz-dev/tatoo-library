@@ -1,6 +1,6 @@
 <template>
     <div v-bind:class="{'revert-style': colorReversed}">
-        <div  class="p-6 bg-white text-4xl antiqueLegacy flex w-full">
+        <div  class="p-6 bg-white text-5xl antiqueLegacy flex w-full">
             <div class="text-center">
                 <p class="ml-4 text-left inline-block">{{ text }}</p>
             </div>
