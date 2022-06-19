@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="flex fixed h-full w-full bg-black">
-        <div v-for="collection in descriptionCollection.collections" :key="collection.collection_id" style="width: 33%">
+        <div v-for="collection in descriptionCollection.collections" :key="collection.collection_id" style="width: 30%">
                 <AppCollectionButton @click="linkCollection(collection)" :description="description(collection)" style="font-family: 'antiqueLegacy', sans-serif;" />
         </div>
     </div>
