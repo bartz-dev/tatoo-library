@@ -3,10 +3,10 @@
         <div v-bind:class="{'text-cols': colorReversed}" class="grid grid-cols-1 divide-gray-900 divide-y-[2px]">
             <div class="h-6"><br></div>
         </div>
-        <div  class="relative button-border main-menu-link flex items-center justify-center h-40 w-full">
+        <div  class="relative button-border flex items-center justify-center w-full">
             <div style="height: 25vh;display: contents" class="text-center w-full">
                 <img style="width: 99%; height: 100%;" class="revert-style mx-auto" src="/images/bouton-about-final.svg" />
-                <div :class="{'text-white': reversed, 'text-black': !reversed}" style="font-family: 'antiqueLegacy', sans-serif;" class="text-[144px] w-4/6 centered">{{ text }}</div>
+                <div :class="{'text-white': reversed, 'text-black': !reversed}" style="font-family: 'antiqueLegacy', sans-serif;" class="about-text w-4/6 centered">{{ text }}</div>
 
                 <!-- <button class="button-border-in">{{ text }}</button> -->
             </div>
@@ -50,15 +50,6 @@ export default {
 .main-menu-link:hover p,
 .main-menu-link.active p {
     opacity: 1;
-}
-
-.button-border {
-    background-color: white;
-    height: 25vh;
-    border-top: 2px solid rgb(16, 16, 16);
-    border-bottom: 2px solid rgb(16, 16, 16);
-    font-size: 7.75rem;
-    line-height: 1;
 }
 
 .text-cols {

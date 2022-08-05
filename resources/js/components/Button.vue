@@ -1,6 +1,6 @@
 <template>
     <div class="cursor-pointer button-img">
-        <img :src="src" />
+        <img alt="button" style="width: 100%" :src="src" />
         <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': reversed, 'text-black': !reversed}" class="w-full centered">{{ text }}</div>
     </div>
 </template>

@@ -24,11 +24,6 @@ export default {
             return window.location.href.indexOf('viewer') !== -1;
         }
     },
-    mounted() {
-        // if (window.location.href.indexOf('viewer') !== -1) {
-        //     window.location.href = window.location.href.slice(0,  window.location.href.indexOf('/viewer'));
-        // }
-    }
 }
 </script>
 <style scoped>

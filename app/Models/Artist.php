@@ -9,9 +9,13 @@ class Artist extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'artist_id'; 
+    protected $primaryKey = 'artist_id';
 
     public function collections() {
         return $this->hasMany(Collection::class, 'artist_id', 'artist_id');
+    }
+
+    public function tags() {
+        return $this->hasMany(TagArtist::class, 'artist_id', 'artist_id');
     }
 }

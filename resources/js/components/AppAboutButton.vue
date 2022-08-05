@@ -1,6 +1,6 @@
 <template>
     <div v-bind:class="{'revert-style': colorReversed}">
-        <div  class="p-6 bg-white text-4xl 2xl:text-3xl antiqueLegacy flex w-full">
+        <div  class="p-6 bg-white about-description antiqueLegacy flex w-full">
             <div class="w-4/6 flex-initial text-center">
                 <p class="ml-4 text-left inline-block">{{ text }}</p>
             </div>
@@ -61,12 +61,6 @@ export default {
     opacity: 1;
 }
 
-.button-border {
-    background-color: white;
-    height: auto;
-    border-bottom: 2px solid rgb(16, 16, 16);
-}
-
 .text-cols {
     background-color: white;
     --tw-text-opacity: 1;
@@ -75,13 +69,6 @@ export default {
 
 .revert-style {
     filter: invert(100%);
-}
-
-/* filter: invert(100%); */
-.button-border-in {
-    font-family: 'antiqueLegacy';
-    /*font-size: 10.5rem;*/
-    height: 25vh;
 }
 
 </style>

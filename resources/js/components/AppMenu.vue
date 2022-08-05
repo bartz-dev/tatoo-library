@@ -6,7 +6,7 @@
                     <div class="button-img">
                         <img v-if="activeRoute.toLowerCase() === 'home'" width="200" src="/images/button_nav_bar_black.svg">
                         <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="w-full centered">Skinner Project</div>
+                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="md:text[10px] text-base w-full centered">Skinner Project</div>
                     </div>
                 </div>
             </router-link>

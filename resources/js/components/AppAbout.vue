@@ -4,7 +4,7 @@
         <AppHomeButton class="h-2/6" color-reversed="true" v-bind:description="buttonDescription" text="About" />
         <!--    first  -->
     <div class="divide-gray-900 divide-y-[2px]">
-        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center text-[144px]">
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center about-text">
             Preserving Tattooed Skin After Death
         </div>
         <div>
@@ -13,7 +13,7 @@
         <div></div>
     </div>
         <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
+                <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl about-description text-white child">
                     {{ firstEdit.description }}
                 </div>
                 <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }"  class="bg-transparent ml-4 child other-child w-full h-full">
@@ -28,7 +28,7 @@
     </div>
     <!--    second  -->-
     <div class="divide-gray-900 divide-y-[2px]">
-        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center text-[144px]">
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center about-text">
             Archiving, Scanning, Digititalization
         </div>
         <div>
@@ -37,7 +37,7 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
+        <div style="z-index: 3;" class="antiqueLegacy bg-black pl-4 p-5 rounded-r-3xl about-description text-white child">
             {{ secondEdit.description }}
         </div>
         <div style="z-index: 2;"  @Click="thirdIsActive = !thirdIsActive" :class="{'slide-right': thirdIsActive }" class="bg-transparent ml-4 child other-child w-full h-full">
@@ -48,7 +48,7 @@
 
 <!--    third  -->
     <div class="divide-gray-900 divide-y-[2px]">
-        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center text-[144px]">
+        <div style="font-family: 'antiqueLegacy', sans-serif;" class="leading-none divide-gray-900 divide-y-[2px] text-center about-text">
             Open Access For A Cultural Heritage
         </div>
         <div>
@@ -57,7 +57,7 @@
         <div></div>
     </div>
     <div style="font-family: 'antiqueLegacy', sans-serif;" class="superpose">
-        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-r-3xl text-4xl 2xl:text-3xl text-white child">
+        <div style="z-index: 3;" class="bg-black pl-4 p-5 rounded-r-3xl about-description text-white child">
             {{ thirdEdit.description }}
         </div>
         <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }" class="pl-4 pt-3 rounded-3xl text-xl pr-8 child other-child">
@@ -83,7 +83,7 @@
         <div class="border-y-2 bg-black">
             <div class="h-6"><br></div>
         </div>
-        <AppAboutButton :description="third" :text="third.text" :colorReversed="true" />
+        <AppAboutButton class="credits" :description="third" :text="third.text" :colorReversed="true" />
     </div>
 </template>
 
@@ -155,11 +155,6 @@ export default {
     width: 100%;
     height: 100%;
 }
-.superpose {
-    position: relative;
-    width: 40%;
-    height: 750px;
-}
 .child {
     z-index: 2;
     position: absolute;
@@ -183,24 +178,4 @@ export default {
 	        animation: slide-right 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
 }
 
-@-webkit-keyframes slide-right {
-  0% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(90%);
-            transform: translateX(90%);
-  }
-}
-@keyframes slide-right {
-  0% {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-  100% {
-    -webkit-transform: translateX(90%);
-            transform: translateX(90%);
-  }
-}
 </style>

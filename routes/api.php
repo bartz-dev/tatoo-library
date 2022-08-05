@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('/artists')->group(function () {
     Route::get('/', function () {
-        return Artist::all();
+        return Artist::all()->load('tags');
     })->name('show');
 
     Route::prefix('/')->group(function () {

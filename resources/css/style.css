@@ -5,3 +5,141 @@
 .antique-basic {
     font-family: 'antiqueLegacy', sans-serif;
 }
+
+@media (max-width: 768px){
+    .credits {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+    .superpose {
+        position: relative;
+        width: 50%;
+        height: 750px;
+    }
+    .text-menu {
+        font-size: 10px;
+    }
+    .button-artist {
+        display: none;
+    }
+    .border-filter {
+        border-bottom-width: 2px;
+    }
+    .text-nom-artist {
+        font-size: 3rem;
+    }
+    .about-text {
+        font-size: 58px;
+    }
+    .button-border {
+        background-color: white;
+        border-top: 2px solid rgb(16, 16, 16);
+        border-bottom: 2px solid rgb(16, 16, 16);
+        font-size: 7.75rem;
+        line-height: 1;
+    }
+    .about-description {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem; /* 24px */
+    }
+    @-webkit-keyframes slide-right {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+        100% {
+            -webkit-transform: translateX(80%);
+            transform: translateX(80%);
+        }
+    }
+    @keyframes slide-right {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+        100% {
+            -webkit-transform: translateX(80%);
+            transform: translateX(80%);
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .credits {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem; /* 24px */
+    }
+    .about-text {
+        font-size: 72px;
+    }
+    .superpose {
+        position: relative;
+        width: 40%;
+        height: 750px;
+    }
+    .artist-menu {
+        display: flex;
+    }
+    .text-menu {
+        font-size: 16px;
+    }
+    .border-filter {
+        border-right-width: 2px;
+    }
+    .text-nom-artist {
+        font-size: 6rem;
+        line-height: 1;
+    }
+    .button-border {
+        background-color: white;
+        height: 25vh;
+        border-top: 2px solid rgb(16, 16, 16);
+        border-bottom: 2px solid rgb(16, 16, 16);
+        font-size: 7.75rem;
+        line-height: 1;
+    }
+    .about-description {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.75rem; /* 28px */
+    }
+    @-webkit-keyframes slide-right {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+        100% {
+            -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+        }
+    }
+    @keyframes slide-right {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+        100% {
+            -webkit-transform: translateX(90%);
+            transform: translateX(90%);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .about-text {
+        font-size: 108px;
+    }
+    .about-description {
+        font-size: 1.5rem; /* 24px */
+        line-height: 2rem; /* 32px */
+    }
+}
+
+@media screen and (min-width: 1535px){
+    .about-text {
+        font-size: 144px;
+    }
+    .about-description {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+}
