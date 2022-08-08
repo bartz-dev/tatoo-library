@@ -36,7 +36,6 @@
     </head>
     <body class="antialiased">
         <div id="app" style="max-width: 100%">
-            @yield('pagescript')
             <App></App>
         </div>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -65,7 +64,7 @@
                 }
             }
         </script>
-
-        <script src="{{ mix('js/app.js') }}"></script>
     </body>
+    <script src="{{ mix('js/app.js') }}"></script>
+
 </html>

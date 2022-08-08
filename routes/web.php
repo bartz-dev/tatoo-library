@@ -1,8 +1,6 @@
 <?php
 
 use App\Models\Artist;
-use App\Models\Collection;
-use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,54 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::any('/', function () {
     return view('welcome');
 });
-
-Route::prefix('/artists')->group(function () {
-    Route::get('/', function () {
-        return Artist::all();
-    })->name('show');
-
-    Route::prefix('/')->group(function () {
-        Route::get('{artist}', function (Artist $artist) {
-            return $artist;
-        })->name('index');
-    });
-});
-
-
 
 Route::get('/viewer/{artist}/p={payload}', ['as'=>'viewer', function (Artist $artist, $payload) {
     return View('three');
 }]);
 
-Route::get('/viewer/{artist}/p={payload}/{any}', ['as'=>'viewer', function (Artist $artist, $payload) {
+Route::get('/{any}', ['as'=>'viewer', function (Artist $artist, $payload) {
     return View('welcome');
 }])->where('any', '.*');;
-
-// Route::prefix('/artists')->group(function () {
-//     Route::get('/', function () {
-//         return Artist::all();
-//     })->name('show');
-
-//     Route::prefix('/')->group(function () {
-//         Route::get('{artist}', function (Artist $artist) {
-//             return $artist;
-//         })->name('index');
-//     });
-// });
-
-// Route::get('/{artist}/collections', function (Artist $artist) {
-//     return $artist->load('collections');
-// });
-
-// Route::get('/collections', function () {
-//     return Collection::all();
-// });
-
-// Route::get('/tags', function() {
-//     return Tag::all();
-// });
-
-

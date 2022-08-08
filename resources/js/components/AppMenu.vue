@@ -1,60 +1,37 @@
 <template>
     <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full mb-4 flex h-8">
         <div class="flex items-center w-4/6">
-            <router-link to="/" :class="{active: 'home' === activeRoute}" @click="setActiveRoute('home')">
-                <div>
-                    <div class="button-img">
-                        <img v-if="activeRoute.toLowerCase() === 'home'" width="200" src="/images/button_nav_bar_black.svg">
-                        <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'home'}" class="md:text[10px] text-base w-full centered">Skinner Project</div>
-                    </div>
-                </div>
-            </router-link>
-
-            <router-link to="/artistsdetail" :class="{active: 'artists' === activeRoute}" @click="setActiveRoute('artists')">
-                <div>
-                    <div class="button-img">
-                        <img v-if="activeRoute.toLowerCase() === 'artists'" width="200" src="/images/button_nav_bar_black.svg">
-                        <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'artists'}" class="w-full centered">Artists</div>
-                    </div>
-                </div>
-            </router-link>
+            <AppMenuSection name="home" description="Skinner Project" :activeRoute="activeRoute" :setActiveRoute="setActiveRoute" :src="'/images/button-nav-bar.svg'" dest="/" />
+            <AppMenuSection name="artists" description="Artists" :activeRoute="activeRoute" :setActiveRoute="setActiveRoute" :src="'/images/button-nav-bar.svg'" dest="/artistsdetail" />
         </div>
 
         <div class="flex items-center w-1/3">
             <div class="w-auto ml-auto">
-                <router-link to="/about" :class="{active: 'about' === activeRoute}" @click="setActiveRoute('about')">
-                    <div class="button-img">
-                        <img v-if="activeRoute.toLowerCase() === 'about'" width="200" src="/images/button_nav_bar_black.svg">
-                        <img v-else width="200" src="/images/button-nav-bar.svg" />
-                        <div style="font-family: 'antiqueLegacy', sans-serif;" :class="{'text-white': activeRoute.toLowerCase() === 'about'}" class="w-full centered">About</div>
-                    </div>
-                </router-link>
+                <AppMenuSection name="about" description="About" :activeRoute="activeRoute" :setActiveRoute="setActiveRoute" :src="'/images/button-nav-bar.svg'" dest="/about" />
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import AppMenuSection from './AppMenuSection.vue';
 export default {
     name: "AppMenu",
+    components: { AppMenuSection },
     data() {
-      return {
-        activeRoute: 'home'
-      }
+        return {
+            activeRoute: "home"
+        };
     },
     mounted() {
-      this.activeRoute = this.$route.name;
-        console.log(this.activeRoute)
+        this.activeRoute = this.$route.name;
     },
     methods: {
         setActiveRoute(routeName) {
             this.activeRoute = routeName;
-            console.log(this.activeRoute)
         },
-    }
-
+    },
+    components: { AppMenuSection }
 }
 </script>
 
