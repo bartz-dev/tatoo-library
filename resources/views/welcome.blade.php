@@ -35,7 +35,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <div id="app" style="max-width: 100%">
+        <div id="app" style="max-width: 100%; max-height: 100%;">
             <App></App>
         </div>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -65,6 +65,7 @@
             }
         </script>
     </body>
+    <link rel="icon" href="{{ url('images/favicon.png') }}">
     <script src="{{ mix('js/app.js') }}"></script>
 
 </html>

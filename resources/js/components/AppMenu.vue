@@ -1,5 +1,5 @@
 <template>
-    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="mt-4 w-full mb-4 flex h-8">
+    <div style="border-top: 1px solid #101010; border-bottom: 1px solid #101010;" class="my-4 w-full mb-4 inline-flex h-8">
         <div class="flex items-center w-4/6">
             <AppMenuSection name="home" description="Skinner Project" :activeRoute="activeRoute" :setActiveRoute="setActiveRoute" :src="'/images/button-nav-bar.svg'" dest="/" />
             <AppMenuSection name="artists" description="Artists" :activeRoute="activeRoute" :setActiveRoute="setActiveRoute" :src="'/images/button-nav-bar.svg'" dest="/artistsdetail" />

@@ -9,7 +9,7 @@
         </div>
         <div class="border-x-2 border-black relative inline-block">
             <video :src="description.payload + '.mp4'" autoplay muted loop></video>
-            <div class="icon-plus hover:bg-[url(/images/button-plus-noir.png)] bg-[url(/images/button-plus.png)]"></div>
+            <div class="icon-plus collection-hover hover:bg-[url(/images/button-plus-noir.png)] bg-[url(/images/button-plus.png)]"></div>
         </div>
         <div class="rounded-b-2xl h-8 w-full bg-white flex justify-center items-center">Click on the + to explore the 3D Scan</div>
     </div>
@@ -27,11 +27,8 @@ export default {
 <style scoped>
 .icon-plus {
     position: absolute;
-    left: 85%;
-    top: 8%;
     transform: translateY(-50%);
     background-size: contain;
-    width: 60px;
     background-repeat: no-repeat;
     height: 84px;
 }

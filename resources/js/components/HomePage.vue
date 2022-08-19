@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <video v-if="isNotViewer" src="/assets/homepage-background.mp4" autoplay muted loop></video>
         <app-second-menu />
          <router-link v-if="isNotViewer" to="/artistsdetail">
