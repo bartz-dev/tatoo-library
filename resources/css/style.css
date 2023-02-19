@@ -17,7 +17,7 @@
         height: 750px;
     }
     .text-menu {
-        font-size: 10px;
+        font-size: 11px;
     }
     .button-artist {
         display: none;
@@ -43,7 +43,7 @@
         line-height: 1.5rem; /* 24px */
     }
     .collection-panel {
-        width: 80%;
+        width: 95%;
     }
     .collection-hover {
         width: 30px;

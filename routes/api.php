@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArtistUploadController;
+use App\Http\Controllers\CollectionUploadController;
 use App\Models\Artist;
 use App\Models\Collection;
 use App\Models\Tag;
@@ -31,10 +33,15 @@ Route::prefix('/artists')->group(function () {
             return $artist;
         })->name('index');
     });
+    Route::post('/upload-file', [ArtistUploadController::class, 'fileUpload'])->name('ArtistUpload');
 });
 
-Route::get('/{artist}/collections', function (Artist $artist) {
-    return $artist->load('collections');
+Route::prefix('/artist/{artist}')->group(function () {
+    Route::get('/collections', function (Artist $artist) {
+        return $artist->load('collections');
+    });
+    Route::post('/upload-files', [CollectionUploadController::class, 'filesUpload'])->name('CollectionUpload');
+
 });
 
 Route::get('/collections', function () {
@@ -44,3 +51,4 @@ Route::get('/collections', function () {
 Route::get('/tags', function() {
     return Tag::all();
 });
+

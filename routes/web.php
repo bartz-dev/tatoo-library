@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtistUploadController;
 use App\Models\Artist;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::any('/', function () {
     return view('welcome');
+
 });
 
 Route::get('/viewer/{artist}/p={payload}', ['as'=>'viewer', function (Artist $artist, $payload) {
@@ -25,3 +28,5 @@ Route::get('/viewer/{artist}/p={payload}', ['as'=>'viewer', function (Artist $ar
 Route::get('/{any}', ['as'=>'viewer', function (Artist $artist, $payload) {
     return View('welcome');
 }])->where('any', '.*');;
+
+

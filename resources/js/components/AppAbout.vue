@@ -17,11 +17,11 @@
                     {{ firstEdit.description }}
                 </div>
                 <div style="z-index: 2;" @Click="isActive = !isActive" :class="{'slide-right': isActive }"  class="bg-transparent ml-4 child other-child w-full h-full">
-                    <img style="object-fit: cover" class="img-background" src="/images/drm.jpg" alt="drm">
+                    <img style="object-fit: fill" class="img-background" src="/images/drm.jpg" alt="drm">
 
                 </div>
             <div @Click="secIsActive = !secIsActive" :class="{'slide-right': secIsActive }" class="ml-4 child w-full h-full last-child">
-                <img style="object-fit: cover" class="img-background" src="/images/tattoo-time-vol-4-dr-fukushi-2.jpg" alt="tattoo-time">
+                <img style="object-fit: fill" class="img-background" src="/images/tattoo-time-vol-4-dr-fukushi-2.jpg" alt="tattoo-time">
             </div>
         </div>
         <div class="h-8 w-full bg-black"></div>
@@ -41,7 +41,7 @@
             {{ secondEdit.description }}
         </div>
         <div style="z-index: 2;"  @Click="thirdIsActive = !thirdIsActive" :class="{'slide-right': thirdIsActive }" class="bg-transparent ml-4 child other-child w-full h-full">
-            <img style="object-fit: cover" class="img-background" src="/images/metashape.jpg" alt="metashape">
+            <img style="object-fit: fill" class="img-background" src="/images/metashape.jpg" alt="metashape">
         </div>
     </div>
     <div class="h-8 w-full bg-black"></div>

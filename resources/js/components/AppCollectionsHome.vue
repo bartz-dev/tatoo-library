@@ -27,7 +27,7 @@
         <div class="w-full">
             <div class="m-3" v-for="(artist, index) in filteredArtists" :key="artist.artist_id">
                 <router-link class="relative" :to="'/artists/' + artist.nom.toLowerCase() + '=' + artist.artist_id">
-                    <ButtonArtist v-if="pair(index)" :reversed="pair(index)" :src="'/assets/' + artist.payload+ '.jpg'" v-bind:class="'rounded-[100px] bg-black text-white ' + backgrounding(artist)" :text="artist.nom" />
+                    <ButtonArtist v-if="pair(index)" :reversed="pair(index)" :src="'/assets/data/' + artist.payload+ '.jpg'" v-bind:class="'rounded-[100px] bg-black text-white ' + backgrounding(artist)" :text="artist.nom" />
                     <ButtonArtist v-else :reversed="!pair(index)" v-bind:class="'rounded-[100px] bg-white text-black ' + backgrounding(artist)" :src="'/assets/' + artist.payload + '.jpg'"   :text="artist.nom" />
                 </router-link>
             </div>

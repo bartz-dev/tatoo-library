@@ -42,8 +42,9 @@ services:
             - .:/var/www
 
     database:
-        image: mariadb
+        image: mariadb:10.9
         restart: unless-stopped
+        command: --max-allowed_packet=32505856
         ports:
             - ${DATABASE_FRONTEND_PORT:-3306}:3306
         volumes:

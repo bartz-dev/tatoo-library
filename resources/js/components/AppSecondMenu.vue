@@ -3,7 +3,7 @@
         <div class="flex items-center md:w-full w-3/6">
             <div class="ml-4 w-auto">
                 <div class="button-img">
-                    <img width="175" src="/images/skinner_project_home.svg" />
+                    <img width="200" src="/images/skinner_project_home.svg" />
                     <div style="font-family: 'antiqueLegacy', sans-serif;" class="text-white text-menu w-full centered">Skinner Project</div>
                 </div>
             </div>

@@ -40,7 +40,7 @@ export default {
         }
     },
     mounted() {
-        this.$http.get('/api/' + this.$route.params.id + '/collections')
+        this.$http.get('/api/artist/' + this.$route.params.id + '/collections')
             .then(res => this.descriptionCollection = res.data)
     }
 }

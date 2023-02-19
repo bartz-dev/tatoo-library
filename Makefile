@@ -16,10 +16,11 @@ test: ## Run tests
 	${DOCKER_COMPOSE_TEST} run --rm -v $${PWD}:/var/www php-fpm test --filter=$(filter) || true
 	${DOCKER_COMPOSE_TEST} down -v
 
-install: 
+install:
 	${DOCKER_COMPOSE} run --entrypoint=/usr/bin/composer --rm php-fpm install
 	@echo ""
 	@echo "------------------------------------------------"
 	@echo "Installation is completed."
 	@echo "------------------------------------------------"
 	@echo ""
+	make up

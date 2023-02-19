@@ -1,8 +1,15 @@
 <ifModule mod_rewrite.c>
-    RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+# That was ONLY to protect you from 500 errors
+# if your server did not have mod_rewrite enabled
+
+RewriteEngine On
+# RewriteBase /
+# NOT needed unless you're using mod_alias to redirect
+
+RewriteCond %{REQUEST_URI} !/public
+RewriteRule ^(.*)$ public/$1 [L]
+# Direct all requests to /public folder
 </ifModule>
+
+php_value post_max_size=50M
+php_value upload_max_filesize=50M
