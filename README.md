@@ -1,64 +1,102 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+<h1 align="center">
+  <br>
+  <a href="https://www.google.com/imgres?imgurl=https%3A%2F%2Fvuejsdevelopers.com%2Fimages%2Fposts%2Fvue_laravel_crud.png&imgrefurl=https%3A%2F%2Fvuejsdevelopers.com%2F2018%2F02%2F05%2Fvue-laravel-crud%2F&tbnid=qFe6V2oOkzjqNM&vet=12ahUKEwid4eqSzaD9AhXpBkQIHfTOC18QMygEegUIARCUAQ..i&docid=tCHlzhKvgQrDSM&w=1200&h=642&q=vuejs%20and%20laravel%20logo.png&ved=2ahUKEwid4eqSzaD9AhXpBkQIHfTOC18QMygEegUIARCUAQ"><img src="https://vuejsdevelopers.com/images/posts/vue_laravel_crud.png" alt="VueLaravel" width="800"></a>
+  <br>
+  Skinner Project's tatoo library
+  <br>
+</h1>
+
+<h4 align="center">A beautiful interface made with <a href="https://laravel.com/" target="_blank">Laravel</a> and <a href="https://vuejs.org/" target="_blank">Vue.JS</a> and completing with  <a href="https://threejs.org/" target="_blank">ThreeJS</a> and <a href="https://tailwindcss.com/" target="_blank">tailwindCSS</a>.</h4>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
 </p>
 
-## About Laravel
+<p align="center">
+  <a href="#key-features">Key Features</a> •
+  <a href="#how-to-use">How To Use</a> •
+  <a href="#download">Download</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#related">Related</a> •
+  <a href="#license">License</a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Key Features
 
-## Learning Laravel
+- [ ] Dark/Light mode
+- [X] Live update - Make changes, See changes
+  - Instantly see what your 3d model look like on the interface.
+- [X] .NET software
+  - Artists management with their tag to filter them.
+  - Artist's models management with 3d model (not stacked in db but directly in storage of the interface)
+  <img src="img/ApplicationInterface.png" alt="SoftwareInterface" width="800">
+- [x] Interface fully responsive for mobile application
+- [x] Filter artists by their type
+- [X] ThreeJS integration with laravel
+- [X] Support GLB and GLTF to preview different tatoo made by many artists.
+- [X] Usefull to compile with docker-compose
+- [X] Full interface communicate with BackEnd
+- [X] Cross platform
+  - Windows, macOS and Linux ready.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## How To Use
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+To clone and run this application, you'll need php and [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)), you also need docker installed on your computer. From your command line:
 
-## Laravel Sponsors
+```bash
+# Clone this repository
+$ git clone https://github.com/clementfleur/tatoo-library.git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Go into the repository
+$ cd tatoo-library
 
-### Premium Partners
+# move .env.example to .env for dev environment
+$ mv .env.example .env
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+# Install dependencies
+$ make install
+# OR avoiding installing Make
+$ docker-compose up -d
 
-## Contributing
+# Run the app
+$ yarn run dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+> **Note**
+> If you're using Linux Bash or WSL on Windows, please be sure to have docker-compose's integration with WSL.
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Download
 
-## Security Vulnerabilities
+You can [download](https://github.com/clementfleur/tatoo-library/releases/tag/V1) the latest installable version of tatoo's library for Windows, macOS and Linux.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Credits
+
+This software uses the following open source packages:
+
+- [Laravel](https://laravel.com/)
+- [Vue.js](https://vuejs.org/)
+- [Three.js](https://threejs.org/)
+
+## Related
+
+[Tatoo Library's management software](https://github.com/clementfleur/tatoo-library-software) - Software Application management of the web interface
+
+## You may also like...
+
+- [My School project](https://github.com/clementfleur/Epitech_Project) - From my first year to my third year.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
+
+---
+
+> GitHub [@clementfleur](https://github.com/clementfleur)
+> Twitter [@BartzGame](https://twitter.com/BartzGame)
+> Discord <a> @Bartz#8618 </a>
+
